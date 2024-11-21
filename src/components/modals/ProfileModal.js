@@ -54,7 +54,11 @@ const ProfileModal = ({ data, isOpen, setOpenProfile }) => {
           <>
             <div className="mt-6 flex flex-col justify-center items-center">
               <div>
-                <img alt="avt" className="w-10" src="./image/icon-people.png" />
+                <img
+                  alt="avt"
+                  className="w-10"
+                  src="ai/image/icon-people.png"
+                />
               </div>
               <p className="mt-4 text-[18px]">{data.name}</p>
               <p className="text-[14px]">{data.email}</p>

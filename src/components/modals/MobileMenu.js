@@ -27,7 +27,7 @@ const MobileMenu = ({ isOpen }) => {
               <use
                 width={12}
                 height={12}
-                href="./image/icons.svg#icon-Arrow"
+                href="ai/image/icons.svg#icon-Arrow"
               ></use>
             </svg>
           </div>{' '}
@@ -45,7 +45,7 @@ const MobileMenu = ({ isOpen }) => {
                 <use
                   width={24}
                   height={24}
-                  href="./image/icons.svg#icon-Vector-1"
+                  href="ai/image/icons.svg#icon-Vector-1"
                 ></use>
               </svg>
               <p className="text-[16px]">Productivity</p>
@@ -59,7 +59,7 @@ const MobileMenu = ({ isOpen }) => {
                 <use
                   width={24}
                   height={24}
-                  href="./image/icons.svg#icon-Tech"
+                  href="ai/image/icons.svg#icon-Tech"
                 ></use>
               </svg>
               <p className="text-[16px]">Tech</p>
@@ -73,7 +73,7 @@ const MobileMenu = ({ isOpen }) => {
                 <use
                   width={24}
                   height={24}
-                  href="./image/icons.svg#icon-Finance"
+                  href="ai/image/icons.svg#icon-Finance"
                 ></use>
               </svg>
               <p className="text-[16px]">Finance</p>
@@ -87,7 +87,7 @@ const MobileMenu = ({ isOpen }) => {
                 <use
                   width={24}
                   height={24}
-                  href="./image/icons.svg#icon-Education"
+                  href="ai/image/icons.svg#icon-Education"
                 ></use>
               </svg>
               <p className="text-[16px]">Education</p>
@@ -101,7 +101,7 @@ const MobileMenu = ({ isOpen }) => {
                 <use
                   width={24}
                   height={24}
-                  href="./image/icons.svg#icon-Analytics"
+                  href="ai/image/icons.svg#icon-Analytics"
                 ></use>
               </svg>
               <p className="text-[16px]">Analytics</p>
@@ -115,7 +115,7 @@ const MobileMenu = ({ isOpen }) => {
                 <use
                   width={24}
                   height={24}
-                  href="./image/icons.svg#icon-Marketing"
+                  href="ai/image/icons.svg#icon-Marketing"
                 ></use>
               </svg>
               <p className="text-[16px]">Marketing</p>

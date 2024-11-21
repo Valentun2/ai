@@ -24,7 +24,7 @@ const SignIn = ({ isOpen, handleModal, handleSubmit, setIsOpenSignIn }) => {
             <use
               width={14}
               height={14}
-              href="./image/icons.svg#icon-close"
+              href="ai/image/icons.svg#icon-close"
             ></use>
           </svg>
         </button>
