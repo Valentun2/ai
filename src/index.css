@@ -1,15 +1,54 @@
-@import-normalize; /* bring in normalize.css styles */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+@layer components {
+  .custom-div:before {
+    content: '';
+    position: absolute;
+    /* width: 300px;
+    height: 400px; */
+    left: -25px;
+    top: -25px;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    filter: blur(50px);
+  }
+}
+
+@layer components {
+  .custom-before:before {
+    height: 1px;
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.35);
+    bottom: 0;
+  }
+}
+
+@layer components {
+  .custom-after::after {
+    height: 1px;
+    content: '';
+    position: absolute;
+    width: 50%;
+    background: white;
+    bottom: 0;
+    left: 0;
+  }
+
+  .isActive .custom-after::after {
+    right: 0; /* Застосовується, якщо елемент із класом isActive є батьківським для custom-after */
+  }
 }
