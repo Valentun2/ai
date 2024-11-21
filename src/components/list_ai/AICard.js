@@ -4,7 +4,7 @@ const Card = ({ title, img, view, tag, children }) => {
       <div className=" pointer-events-none">
         {' '}
         <img src={`ai/${img}`} alt="AI" width={'48'} height={'48'} />
-        <h4 className=" font-semibold text-[18px] mt2">{title}</h4>
+        <h4 className=" font-semibold text-[18px] mt-2">{title}</h4>
         <p className="text-[14px] text-cardsText mt-2 ">{children}</p>
       </div>
       <div className="flex justify-between  mt-6 pointer-events-none">
