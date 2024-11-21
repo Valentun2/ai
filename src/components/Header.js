@@ -132,6 +132,7 @@ const Header = () => {
           email: userData.user.email,
           password: data.password,
         });
+        localStorage.setItem('token', userDataLogin.token);
 
         setUserData(userDataLogin.user);
         setToken(userDataLogin.token);
@@ -200,7 +201,7 @@ const Header = () => {
                 <use
                   width={12}
                   height={12}
-                  href="./image/icons.svg#icon-Arrow"
+                  href="ai/image/icons.svg#icon-Arrow"
                 ></use>
               </svg>
             </div>
@@ -216,7 +217,7 @@ const Header = () => {
             className="hidden md:flex gap-1 flex-col relative"
           >
             <div className="hidden md:flex gap-1 items-center">
-              <img className="w-4" alt="avt" src="./image/icon-people.png" />
+              <img className="w-4" alt="avt" src="ai/image/icon-people.png" />
               <p>Profile</p>
               <svg
                 width={16}
