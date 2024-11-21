@@ -179,11 +179,7 @@ const Header = () => {
             height={24}
             className="flex p-2 justify-center items-center w-10 h-10 bg-input rounded-[6px]"
           >
-            <use
-              width={24}
-              height={24}
-              href="ai/image/icons.svg#icon-logo"
-            ></use>
+            <use width={24} height={24} href="/image/icons.svg#icon-logo"></use>
           </svg>
           <Link to="/" className="text-[17px] font-bold">
             getmyhelp.ai
@@ -201,7 +197,7 @@ const Header = () => {
                 <use
                   width={12}
                   height={12}
-                  href="ai/image/icons.svg#icon-Arrow"
+                  href="/image/icons.svg#icon-Arrow"
                 ></use>
               </svg>
             </div>
@@ -217,7 +213,7 @@ const Header = () => {
             className="hidden md:flex gap-1 flex-col relative"
           >
             <div className="hidden md:flex gap-1 items-center">
-              <img className="w-4" alt="avt" src="ai/image/icon-people.png" />
+              <img className="w-4" alt="avt" src="/image/icon-people.png" />
               <p>Profile</p>
               <svg
                 width={16}
@@ -227,7 +223,7 @@ const Header = () => {
                 <use
                   width={12}
                   height={12}
-                  href="ai/image/icons.svg#icon-Arrow"
+                  href="/image/icons.svg#icon-Arrow"
                 ></use>
               </svg>
             </div>
@@ -265,7 +261,7 @@ const Header = () => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-burger"
+              href="/image/icons.svg#icon-burger"
             ></use>
           </svg>
         </button>
