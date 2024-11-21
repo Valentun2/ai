@@ -1,5 +1,4 @@
 import InputModal from './InputModal';
-import { useState } from 'react';
 
 const AuthModal = ({
   isOpen,
@@ -7,7 +6,6 @@ const AuthModal = ({
   setIsAuthModalOpen,
   onAuthSubmit,
 }) => {
-  const [data, setData] = useState({});
   const handleClick = () => {
     setIsAuthModalOpen(false);
   };
@@ -78,13 +76,13 @@ const AuthModal = ({
           <div className="flex gap-4 flex-col md:flex-row ">
             <InputModal
               name={'firstName'}
-              style={'w-full md:w-[268px]'}
+              styles={'w-full md:w-[268px]'}
               value={'Artur'}
               labelText={'First value'}
             />
             <InputModal
               name={'lastName'}
-              style={'w-full md:w-[268px]'}
+              styles={'w-full md:w-[268px]'}
               value={'Bialovetskyi'}
               labelText={'Last value'}
             />
@@ -94,11 +92,11 @@ const AuthModal = ({
               name={'email'}
               value={'bialovetskyi@getmyhelp.com'}
               labelText={'Email'}
-              style={'w-full'}
+              styles={'w-full'}
             />
             <InputModal
               name={'password'}
-              style={'w-full'}
+              styles={'w-full'}
               value={'mg20uzowo6c7cexh3qsd'}
               labelText={'Password'}
             />

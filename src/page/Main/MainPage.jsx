@@ -1,5 +1,3 @@
-import Footer from 'components/Footer';
-import Header from 'components/Header';
 import Hero from 'components/Hero';
 import AIList from 'components/list_ai/AIList';
 import Support from 'components/support/Support';

@@ -1,8 +1,6 @@
 import Card from './AICard';
 
 const ProductivityBlock = () => {
-  // console.log(title, children);
-  const token = localStorage.getItem('token');
   return (
     <ul className="flex flex-wrap  gap-4 mt-4">
       <Card

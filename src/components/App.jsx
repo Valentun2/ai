@@ -5,7 +5,6 @@ import ChatPage from 'page/Chat/ChatPage';
 import PricingPage from 'page/Pricing/PricingPage';
 
 export const App = () => {
-  const token = localStorage;
   return (
     <>
       {/* <Header /> */}

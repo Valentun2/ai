@@ -6,7 +6,7 @@ const ProfileModal = ({ data, isOpen, setOpenProfile }) => {
   const [active, setActive] = useState(true);
   // const [userData, setUserData] = useState({});
   const handleClick = e => {
-    if (e.target.id == 1) {
+    if (e.target.id === 1) {
       setActive(true);
     } else {
       setActive(false);
@@ -54,7 +54,7 @@ const ProfileModal = ({ data, isOpen, setOpenProfile }) => {
           <>
             <div className="mt-6 flex flex-col justify-center items-center">
               <div>
-                <img className="w-10" src="./image/icon-people.png" />
+                <img alt="avt" className="w-10" src="./image/icon-people.png" />
               </div>
               <p className="mt-4 text-[18px]">{data.name}</p>
               <p className="text-[14px]">{data.email}</p>
@@ -66,13 +66,13 @@ const ProfileModal = ({ data, isOpen, setOpenProfile }) => {
               <div className="flex gap-4 ">
                 <InputModal
                   name={'firstName'}
-                  style={'sm:w-[155px] md:w-[293px]'}
+                  styles={'sm:w-[155px] md:w-[293px]'}
                   value={'Artur'}
                   labelText={'First value'}
                 />
                 <InputModal
                   name={'lastName'}
-                  style={'sm:w-[155px] md:w-[293px]'}
+                  styles={'sm:w-[155px] md:w-[293px]'}
                   value={'Bialovetskyi'}
                   labelText={'Last value'}
                 />
@@ -82,19 +82,19 @@ const ProfileModal = ({ data, isOpen, setOpenProfile }) => {
                   name={'email'}
                   value={'bialovetskyi@getmyhelp.com'}
                   labelText={'Email'}
-                  style={'w-full'}
+                  styles={'w-full'}
                 />
               </div>
               <div className="flex flex-col gap-4 mt-4">
                 <InputModal
                   name={'oldPassword'}
-                  style={'w-full'}
+                  styles={'w-full'}
                   value={'mg20uzowo6c7cexh3qsd'}
                   labelText={'Password'}
                 />
                 <InputModal
                   name={'newPassword'}
-                  style={'w-full'}
+                  styles={'w-full'}
                   value={'mg20uzowo6c7cexh3qsd'}
                   labelText={'Password'}
                 />

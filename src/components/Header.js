@@ -216,7 +216,7 @@ const Header = () => {
             className="hidden md:flex gap-1 flex-col relative"
           >
             <div className="hidden md:flex gap-1 items-center">
-              <img className="w-4" src="./image/icon-people.png" />
+              <img className="w-4" alt="avt" src="./image/icon-people.png" />
               <p>Profile</p>
               <svg
                 width={16}
