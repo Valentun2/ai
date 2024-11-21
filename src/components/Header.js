@@ -181,7 +181,7 @@ const Header = () => {
             <use
               width={24}
               height={24}
-              href="./image/icons.svg#icon-logo"
+              href="ai/image/icons.svg#icon-logo"
             ></use>
           </svg>
           <Link to="/" className="text-[17px] font-bold">
@@ -226,7 +226,7 @@ const Header = () => {
                 <use
                   width={12}
                   height={12}
-                  href="./image/icons.svg#icon-Arrow"
+                  href="ai/image/icons.svg#icon-Arrow"
                 ></use>
               </svg>
             </div>
@@ -264,7 +264,7 @@ const Header = () => {
             <use
               width={24}
               height={24}
-              href="./image/icons.svg#icon-burger"
+              href="ai/image/icons.svg#icon-burger"
             ></use>
           </svg>
         </button>
