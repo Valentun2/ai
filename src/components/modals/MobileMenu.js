@@ -1,8 +1,7 @@
-import useModal from 'hooks/modalHook';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const MobileMenu = ({ isOpen, logout, children }) => {
+const MobileMenu = ({ isOpen, setIsOpen, children }) => {
   const [isVisible, setIsVisible] = useState(false);
   // const { openModal, closeModal, isModalOpen } = useModal();
   // console.log(isModalOpen);
@@ -17,13 +16,13 @@ const MobileMenu = ({ isOpen, logout, children }) => {
 
   return (
     <div
-      className={`z-50 fixed top-[81px] bg-black  ${
+      className={`z-50 fixed  bg-black overflow-y-auto  ${
         isVisible ? 'h-[556px]' : 'h-[216px]'
       }  bg-opacity-50 backdrop-blur-2xl  w-full p-6 transition-all duration-500  ${
         !isOpen ? '-translate-x-full' : 'translate-x-0'
       }`}
     >
-      <div className="absolute flex flex-col text-whiteTransparent text-[16px]">
+      <div className="absolute flex flex-col text-whiteTransparent text-[16px] h-[110%] ">
         <div className="flex gap-4 flex-col">
           <div className="flex  items-center gap-1 " onClick={handleClick}>
             <p>AI Categories</p>
@@ -114,7 +113,7 @@ const MobileMenu = ({ isOpen, logout, children }) => {
               </svg>
               <p className="text-[16px] cursor-pointer">Analytics</p>
             </li>
-            <li className="flex gap-[6px] w-[168px] items-center">
+            <li className="flex gap-[6px] w-[168px] items-center mb-4">
               <svg
                 width={40}
                 height={40}
@@ -133,7 +132,13 @@ const MobileMenu = ({ isOpen, logout, children }) => {
         <Link className="cursor-pointer" to="chat">
           Chat
         </Link>
-        <Link className="mt-4 cursor-pointer " to="pricing">
+        <Link
+          onClick={() => {
+            setIsOpen(false);
+          }}
+          className="mt-4 cursor-pointer "
+          to="pricing"
+        >
           Pricing
         </Link>
         {children}

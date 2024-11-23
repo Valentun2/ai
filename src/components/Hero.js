@@ -1,6 +1,6 @@
 const Hero = ({ click }) => {
   return (
-    <section className="py-[228px] md:py-[325px]  overflow-hidden ">
+    <section className="pt-[228px] md:pt-[325px]  overflow-hidden ">
       <div
         className="  absolute top-0 xl:top-[-85px] left-0 w-[270px] md:w-[370px] lg:w-[500px] xl:w-[750px]  2xl:w-[950px] h-[500px]    xl:h-[650px] z-[-1]"
         style={{
@@ -54,7 +54,7 @@ const Hero = ({ click }) => {
           </li>
         </ul>
       </div>
-      <div className="relative w-[100vw] overflow-hidden  bottom-[-228px]    md:bottom-[-325px] h-[200px]">
+      <div className="relative w-[100vw] overflow-hidden   h-[228px] md:h-[325px]">
         <div
           className=" absolute bottom-0 xl:bottom-[-150px] 2xl:bottom-[-200px] left-0 w-[60px] md:w-[80px] xl:w-[250px]  h-[80px] md:h-[100px] xl:h-[300px]  z-[-1]  "
           style={{

@@ -1,9 +1,6 @@
 import { currentUser } from 'api/currentUser';
-import Header from 'components/Header';
 import ProfileModal from 'components/modals/ProfileModal';
-import { eventEmitter, eventEmitter2 } from 'helpers/eventEmitter';
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 
 const ChatPage = () => {
@@ -31,7 +28,7 @@ const ChatPage = () => {
     } else {
       fetchData();
     }
-  }, []);
+  }, [token, navigate]);
 
   const handleClick = () => {
     console.log('gg');
@@ -93,7 +90,7 @@ const ChatPage = () => {
         </div>
       </div>
       <div className="flex w-full h-[calc(100% - 81px)] ">
-        <div className="hidden md:block w-[15%] p-4 h-screen bg-blackChat border-r-[2px] border-r-pricingBorder">
+        <div className="hidden md:block w-[25%] p-4 h-screen bg-blackChat border-r-[2px] border-r-pricingBorder">
           {' '}
           <div className="flex items-center flex-col justify-between h-[100%] ">
             <div>
@@ -154,7 +151,7 @@ const ChatPage = () => {
           !openMenu ? '-translate-x-full' : 'translate-x-0'
         }`}
       >
-        <div className="absolute w-[253px] flex flex-col text-whiteTransparent h-screen border-r-[2px] border-r-pricingBorder  pb-4">
+        <div className="absolute w-[253px] flex flex-col text-whiteTransparent h-screen border-r-[2px] border-r-pricingBorder  pb-4 bg-blackChat">
           <div className="flex flex-col justify-between h-[calc(100vh-74px)]">
             <div className="flex gap-1 items-center">
               <svg

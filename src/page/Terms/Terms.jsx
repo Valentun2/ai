@@ -1,4 +1,4 @@
-const Policy = () => {
+const Terms = () => {
   return (
     <section className="py-8">
       <div className="w-[85%]  sm:w-[356px] md:w-[650px]  lg:w-[896px]  text-cardsText m-auto">
@@ -225,4 +225,4 @@ const Policy = () => {
   );
 };
 
-export default Policy;
+export default Terms;

@@ -1,15 +1,10 @@
 import { currentUser } from 'api/currentUser';
-import {
-  eventEmitter,
-  eventEmitter2,
-  modalEventEmitter,
-} from 'helpers/eventEmitter';
-import { useState } from 'react';
+import { eventEmitter2 } from 'helpers/eventEmitter';
 import toast from 'react-hot-toast';
-import { redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
-  const [isSubscription, setIsSubscription] = useState('');
+  // const [isSubscription, setIsSubscription] = useState('');
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -30,7 +25,7 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
       console.log(userData); // Лог для налагодження
 
       // Зберігаємо статус підписки в state
-      setIsSubscription(userData.subscription);
+      // setIsSubscription(userData.subscription);
 
       // Перевіряємо статус підписки
       if (userData.subscription !== 'none') {
@@ -49,8 +44,8 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
   };
 
   return (
-    <div className="z-50 top-[82px] w-[100%] h-[100vh] fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
-      <div className=" z-10 relative sm:w-[358px] md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl">
+    <div className="z-[10] top-[82px] w-[100%] h-screen  fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center overflow-auto">
+      <div className=" overflow-auto top-[15px] z-10 relative sm:w-[358px] md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl max-h-[calc(100vh-150px)]">
         <button
           onClick={handleClick}
           className="cursor-pointer absolute right-[16px] top-4 bg-transparent"

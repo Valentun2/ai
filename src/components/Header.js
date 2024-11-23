@@ -7,7 +7,7 @@ import ProfileModal from './modals/ProfileModal';
 import axios from 'axios';
 import useModal from 'hooks/modalHook';
 import { logout } from 'api/logout';
-import { eventEmitter, eventEmitter2 } from 'helpers/eventEmitter';
+import { eventEmitter2 } from 'helpers/eventEmitter';
 import toast from 'react-hot-toast';
 export const setBearerToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -85,7 +85,7 @@ const Header = () => {
     return () => {
       eventEmitter2.off('start', handleStart);
     };
-  }, []);
+  }, [openModal]);
 
   useEffect(() => {
     eventEmitter2.on('profile', () => {
@@ -104,7 +104,6 @@ const Header = () => {
     //   eventEmitter.off('profile', handleProfile);
     // };
   }, []);
-  console.log(isOpen || openProfile || isAuthModalOpen || isOpenSignIn);
   return (
     <header
       className={`  sticky top-0     z-50  ${
@@ -126,7 +125,11 @@ const Header = () => {
               href="./image/icons.svg#icon-logo"
             ></use>
           </svg>
-          <Link to="/" className="text-[17px] font-bold">
+          <Link
+            onClick={() => setIsOpen(false)}
+            to="/"
+            className="text-[17px] font-bold"
+          >
             getmyhelp.ai
           </Link>
         </div>
@@ -237,7 +240,9 @@ const Header = () => {
       >
         {' '}
         {token ? (
-          <p onClick={logoutUser}>Log out</p>
+          <p className="pt-4" onClick={logoutUser}>
+            Log out
+          </p>
         ) : (
           <ul className="mt-4 flex gap-4 text-[16px]">
             <li>

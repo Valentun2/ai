@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="py-16">
@@ -30,9 +32,13 @@ const Footer = () => {
           <div>
             <h5 className="font-bold text-[17px]">Legal</h5>
             <ul className="flex flex-col mt-2  text-[17px] text-cardsText gap-2">
-              <li>Terms</li>
+              <li>
+                <Link to={'terms'}>Terms</Link>{' '}
+              </li>
               <li>Cookies</li>
-              <li>Policy</li>
+              <li>
+                <Link to={'policy'}>Policy</Link>
+              </li>
             </ul>
           </div>
         </div>
