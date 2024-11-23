@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import InputModal from './InputModal';
 
 import { login } from 'api/login';
@@ -28,9 +28,9 @@ const SignIn = ({
     console.log(formValues);
   };
 
-  const handleClick = () => {
-    setIsOpenSignIn(false);
-  };
+  // const handleClick = () => {
+  //   setIsOpenSignIn(false);
+  // };
 
   const onSubmit = async evt => {
     evt.preventDefault();

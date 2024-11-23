@@ -1,4 +1,3 @@
-import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import AnalyticsBlock from './AnalyticsBlock';
 import BlockWrapperr from './BlockWrapperr';
 import EducationBlock from './EducationBlock';
@@ -6,7 +5,6 @@ import FinanceBlock from './FinanceBlock';
 import MarketingBlock from './MarketingBlock';
 import ProductivityBlock from './ProductivityBlock';
 import TechBlock from './TechBlock';
-import { useState } from 'react';
 
 const AIList = ({ value }) => {
   return (
