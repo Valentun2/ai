@@ -1,8 +1,12 @@
 import AnnualPlan from 'components/Plans/AnnualPlan';
 import MonthlyPlan from 'components/Plans/MonthlyPlan';
 import QuarterlyPlan from 'components/Plans/QuarterlyPlan';
+import { useEffect } from 'react';
 
 const PricingPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="pb-[60px] overflow-hidden">
       <div className="px-4 md:px-8">

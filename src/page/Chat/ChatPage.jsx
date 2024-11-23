@@ -9,6 +9,10 @@ const ChatPage = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const token = localStorage.getItem('token');
   useEffect(() => {
     async function fetchData() {

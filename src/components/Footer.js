@@ -21,12 +21,29 @@ const Footer = () => {
           <div>
             <h5 className="font-bold text-[17px]">Categories</h5>
             <ul className="flex flex-col mt-2 text-[17px] text-cardsText gap-2">
-              <li>Productivity AI</li>
-              <li>Tech AI</li>
-              <li>Finance AI</li>
-              <li>Education AI</li>
-              <li>Analytics AI</li>
-              <li>Marketing AI</li>
+              <li>
+                {' '}
+                <Link to="#productivity">Productivity AI</Link>
+              </li>
+              <li>
+                {' '}
+                <Link to="#tech">Tech AI</Link>
+              </li>
+              <li>
+                {' '}
+                <Link to="#Finance">Finance AI</Link>
+              </li>
+              <li>
+                {' '}
+                <Link to="#education">Education AI</Link>
+              </li>
+              <li>
+                {' '}
+                <Link to="#analytics">Analytics AI</Link>
+              </li>
+              <li>
+                <Link to="#marketing">Marketing AI</Link>
+              </li>
             </ul>
           </div>
           <div>

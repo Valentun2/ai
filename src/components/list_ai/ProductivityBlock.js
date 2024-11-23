@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
+import { useLocation } from 'react-router-dom';
+import ScrollToHash from 'helpers/Scroll';
 
 const ProductivityBlock = () => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -25,8 +27,32 @@ const ProductivityBlock = () => {
     setVisible(true);
   };
 
+  const location = useLocation();
+
+  // useEffect(() => {
+  //   const scrollToElement = () => {
+  //     if (location.hash) {
+  //       const targetElement = document.querySelector(location.hash);
+  //       if (targetElement) {
+  //         // Вираховуємо позицію елемента з урахуванням відступу
+  //         const topOffset =
+  //           targetElement.getBoundingClientRect().top + window.pageYOffset;
+  //         const offset = 200; // Задаємо відступ, наприклад, 100px
+
+  //         window.scrollTo({ top: topOffset - offset, behavior: 'smooth' });
+  //         window.history.replaceState(null, '', location.pathname);
+  //       } else {
+  //         console.warn(`Елемент з хешем "${location.hash}" не знайдено`);
+  //       }
+  //     }
+  //   };
+
+  //   scrollToElement();
+  // }, [location]);
+
   return (
-    <div className="relative">
+    <div id="productivity" className="relative">
+      <ScrollToHash offset={200} />
       <ul onClick={handleClick} className="flex flex-wrap  gap-4 mt-4">
         <Card
           title={'AI Bookkeeping'}

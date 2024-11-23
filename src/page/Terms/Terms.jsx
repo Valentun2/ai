@@ -1,4 +1,9 @@
+import { useEffect } from 'react';
+
 const Terms = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section className="py-8">
       <div className="w-[85%]  sm:w-[356px] md:w-[650px]  lg:w-[896px]  text-cardsText m-auto">

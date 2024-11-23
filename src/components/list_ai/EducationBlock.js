@@ -2,6 +2,7 @@ import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import Card from './AICard';
 import { useState } from 'react';
 import ModalAI from 'components/modals/ModalAI';
+import ScrollToHash from 'helpers/Scroll';
 
 const EducationBlock = () => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -25,7 +26,9 @@ const EducationBlock = () => {
     setVisible(true);
   };
   return (
-    <div className="relative">
+    <div className="relative" id="education">
+      <ScrollToHash offset={200} />
+
       <ul onClick={handleClick} className="flex flex-wrap gap-4 mt-4">
         <Card
           title={'Language Tutor'}

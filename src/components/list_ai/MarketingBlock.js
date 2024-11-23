@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
+import ScrollToHash from 'helpers/Scroll';
 
 const MarketingBlock = () => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -26,7 +27,9 @@ const MarketingBlock = () => {
   };
 
   return (
-    <div className="relative">
+    <div id="marketing" className=" relative">
+      <ScrollToHash offset={200} />
+
       <ul onClick={handleClick} className="flex flex-wrap  gap-4 mt-4">
         <Card
           title={'Ad Copy Generator'}
