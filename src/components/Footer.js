@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  console.log('object');
   return (
     <footer className="py-16">
       <div className="container md:flex justify-between">
