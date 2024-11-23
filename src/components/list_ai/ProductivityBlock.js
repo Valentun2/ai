@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import ScrollToHash from 'helpers/Scroll';
 
 const ProductivityBlock = () => {
@@ -27,7 +27,7 @@ const ProductivityBlock = () => {
     setVisible(true);
   };
 
-  const location = useLocation();
+  // const location = useLocation();
 
   // useEffect(() => {
   //   const scrollToElement = () => {
