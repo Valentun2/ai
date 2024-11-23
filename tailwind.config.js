@@ -40,6 +40,8 @@ const config = {
         pricingBorder: 'rgba(255, 255, 255, 0.3)',
         modalBorder: 'rgba(255, 255, 255, 0.15)',
         blackTransparent: 'rgba(0, 0, 0, 0.7)',
+        blackChat: 'rgba(0, 0, 0, 0.5)',
+
         bgCards: 'rgba(255, 255, 255, 0.2)',
       },
     },

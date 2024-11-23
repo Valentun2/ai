@@ -3,12 +3,21 @@ import MobileMenu from './modals/MobileMenu';
 import { useEffect, useState } from 'react';
 import SignIn from './modals/SignIn';
 import AuthModal from './modals/AuthModal';
-import { login } from 'api/login';
 import ProfileModal from './modals/ProfileModal';
-import { auth } from 'api/auth';
 import axios from 'axios';
+import useModal from 'hooks/modalHook';
+import { logout } from 'api/logout';
+import { eventEmitter, eventEmitter2 } from 'helpers/eventEmitter';
+import toast from 'react-hot-toast';
+export const setBearerToken = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  console.log('Bearer Token Set:', axios.defaults.headers.common.Authorization);
+};
 
+setBearerToken(localStorage.getItem('token'));
 const Header = () => {
+  const { openModal, closeModal, isModalOpen } = useModal();
+
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [isOpen, setIsOpen] = useState(false);
@@ -29,46 +38,25 @@ const Header = () => {
     };
   }, []);
 
-  const setBearerToken = token => {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-    console.log(
-      'Bearer Token Set:',
-      axios.defaults.headers.common.Authorization
-    );
-  };
-
   useEffect(() => {
-    console.log('object');
+    // setIsOpenProfile(true);
   }, [token]);
-
-  // const handleToken = token => {
-  //   setToken(token);
-  // };
 
   const handleClick = e => {
     setIsOpen(!isOpen);
   };
-  const openModal = e => {
-    if (isAuthModalOpen) {
-      setIsAuthModalOpen(false);
-    }
-    setIsOpenSignIn(!isOpenSignIn);
-  };
+  // const openModal = e => {
+  //   if (isAuthModalOpen) {
+  //     setIsAuthModalOpen(false);
+  //   }
+  //   setIsOpenSignIn(!isOpenSignIn);
+  // };
 
-  const registerUser = async data => {
-    try {
-      return await auth(data);
-    } catch (error) {
-      throw new Error('Registration failed');
-    }
-  };
-
-  const loginUser = async credentials => {
-    try {
-      return await login(credentials);
-    } catch (error) {
-      throw new Error('Login failed');
-    }
+  const logoutUser = async () => {
+    await logout();
+    setToken('');
+    localStorage.removeItem('token');
+    setOpenProfile(false);
   };
 
   const handleOpenAuthModal = e => {
@@ -83,87 +71,40 @@ const Header = () => {
     setOpenProfile(!openProfile);
   };
 
-  const onSubmit = async evt => {
-    evt.preventDefault();
-    console.log(evt);
-    const email = evt.target.email.value.trim();
-    const password = evt.target.password.value.trim();
+  // ================
 
-    if (!email || !password) {
-      alert('Please fill in both fields.'); // Просте повідомлення про помилку
-      return;
-    }
-
-    const data = { email, password };
-
-    try {
-      const userData = await login(data);
-      setUserData({ ...userData.user });
-      localStorage.setItem('token', userData.token);
-      setToken(userData.token); // Використовуємо токен безпосередньо
-      setBearerToken(userData.token);
-      setIsOpenSignIn(false);
-      evt.target.reset(); // Очищення форми тільки у разі успіху
-    } catch (err) {
-      console.error('Login failed:', err.message); // Більш детальне повідомлення про помилку
-      alert('Login failed. Please check your credentials.');
-    }
-  };
-
-  const onAuthSubmit = async evt => {
-    evt.preventDefault();
-    const data = {
-      firstName: evt.target.firstName.value,
-      lastName: evt.target.lastName.value,
-      email: evt.target.email.value,
-      password: evt.target.password.value,
+  useEffect(() => {
+    const handleStart = () => {
+      openModal('loginModal');
     };
 
-    try {
-      if (!data.email || !data.password || !data.firstName || !data.lastName) {
-        console.log('All fields are required.');
-        return;
-      }
+    // Додаємо слухач події
+    eventEmitter2.on('start', handleStart);
 
-      const userData = await registerUser(data);
+    // Повертаємо функцію для відписки
+    return () => {
+      eventEmitter2.off('start', handleStart);
+    };
+  }, []);
 
-      if (userData?.user?.email) {
-        const userDataLogin = await loginUser({
-          email: userData.user.email,
-          password: data.password,
-        });
-        localStorage.setItem('token', userDataLogin.token);
+  useEffect(() => {
+    eventEmitter2.on('profile', () => {
+      console.log('profile');
+      setIsOpenProfile(true);
+    });
+    // const handleProfile = () => {
+    //   setOpenProfile(true);
+    // };
+    console.log('object');
+    // Додаємо слухач події
+    // eventEmitter.on('profile', handleProfile);
 
-        setUserData(userDataLogin.user);
-        setToken(userDataLogin.token);
-        setIsAuthModalOpen(false);
-      }
-    } catch (err) {
-      console.log(err.message);
-    } finally {
-      evt.target.reset();
-    }
-  };
-
-  // useEffect(() => {
-  //   console.log(userData.email);
-  //   if (!token) {
-  //     return;
-  //   }
-  //   console.log('k');
-  //   const fetchData = async () => {
-  //     try {
-  //       const user = await currentUser();
-  //       console.log(user); // обробка користувача або установка стейту
-  //       setUserData({ ...user });
-  //     } catch (error) {
-  //       console.error('Error fetching user data:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, [token]);
-
+    // Повертаємо функцію для відписки
+    // return () => {
+    //   eventEmitter.off('profile', handleProfile);
+    // };
+  }, []);
+  console.log(isOpen || openProfile || isAuthModalOpen || isOpenSignIn);
   return (
     <header
       className={`  sticky top-0     z-50  ${
@@ -207,7 +148,16 @@ const Header = () => {
             </div>
             <div></div>
           </li>
-          <Link to="chat">Chat</Link>
+          <Link
+            onClick={() => {
+              if (!token) {
+                toast('You need to log in!');
+              }
+            }}
+            to={`${token ? '/chat' : ''}`}
+          >
+            Chat
+          </Link>
           <Link to="pricing">Pricing</Link>
         </ul>
         {token ? (
@@ -239,18 +189,24 @@ const Header = () => {
               }`}
             >
               <p onClick={handleOpenProfile}>Settings</p>
-              <p>Log out</p>
+              <p onClick={logoutUser}>Log out</p>
             </div>
           </div>
         ) : (
           <ul className="hidden md:flex gap-4 text-[16px]">
             <li>
-              <button onClick={openModal} className="text-[16px]">
+              <button
+                onClick={() => openModal('loginModal')}
+                className="text-[16px]"
+              >
                 Sing In
               </button>
             </li>
             <li>
-              <button onClick={handleOpenAuthModal} className="text-[16px]">
+              <button
+                onClick={() => openModal('authModal')}
+                className="text-[16px]"
+              >
                 Sing Up
               </button>
             </li>
@@ -270,20 +226,66 @@ const Header = () => {
           </svg>
         </button>
       </div>
-      <MobileMenu isOpen={isOpen} />
-      <SignIn
-        handleSubmit={onSubmit}
-        // token={handleToken}
-        isOpen={isOpenSignIn}
+      <MobileMenu
+        logout={logoutUser}
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+        setToken={setToken}
+        // isOpen={isOpenSignIn}
         handleModal={handleOpenAuthModal}
         setIsOpenSignIn={setIsOpenSignIn}
-      />
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        handleModal={openModal}
-        setIsAuthModalOpen={setIsAuthModalOpen}
-        onAuthSubmit={onAuthSubmit}
-      />
+      >
+        {' '}
+        {token ? (
+          <p onClick={logoutUser}>Log out</p>
+        ) : (
+          <ul className="mt-4 flex gap-4 text-[16px]">
+            <li>
+              <button
+                onClick={() => {
+                  openModal('loginModal');
+                  setIsOpen(false);
+                }}
+                className="text-[16px]"
+              >
+                Sing In
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => {
+                  openModal('authModal');
+                  setIsOpen(false);
+                }}
+                className="text-[16px]"
+              >
+                Sing Up
+              </button>
+            </li>
+          </ul>
+        )}
+      </MobileMenu>
+      {isModalOpen('loginModal') && (
+        <SignIn
+          // handleSubmit={onSubmit}
+          // token={handleToken}
+          setToken={setToken}
+          openModal={openModal}
+          handleModal={handleOpenAuthModal}
+          setIsOpenSignIn={setIsOpenSignIn}
+          closeModal={closeModal}
+          setUserData={setUserData}
+        />
+      )}
+      {isModalOpen('authModal') && (
+        <AuthModal
+          setUserData={setUserData}
+          closeModal={closeModal}
+          isOpen={isAuthModalOpen}
+          openModal={openModal}
+          setToken={setToken}
+        />
+      )}
       <ProfileModal
         setOpenProfile={setOpenProfile}
         isOpen={openProfile}

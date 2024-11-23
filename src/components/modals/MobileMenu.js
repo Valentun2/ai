@@ -1,11 +1,19 @@
+import useModal from 'hooks/modalHook';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const MobileMenu = ({ isOpen }) => {
-  const [isVisible, setIsVisible] = useState('false');
+const MobileMenu = ({ isOpen, logout, children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  // const { openModal, closeModal, isModalOpen } = useModal();
+  // console.log(isModalOpen);
   const handleClick = e => {
     setIsVisible(!isVisible);
   };
+
+  // const handleCliclSingIn = () => {
+  //   props.setIsOpenSignIn(true);
+  //   props.setIsOpen(false);
+  // };
 
   return (
     <div
@@ -48,7 +56,7 @@ const MobileMenu = ({ isOpen }) => {
                   href="ai/image/icons.svg#icon-Vector-1"
                 ></use>
               </svg>
-              <p className="text-[16px]">Productivity</p>
+              <p className="text-[16px] cursor-pointer">Productivity</p>
             </li>
             <li className="flex gap-[6px] w-[168px] items-center">
               <svg
@@ -62,7 +70,7 @@ const MobileMenu = ({ isOpen }) => {
                   href="ai/image/icons.svg#icon-Tech"
                 ></use>
               </svg>
-              <p className="text-[16px]">Tech</p>
+              <p className="text-[16px] cursor-pointer">Tech</p>
             </li>
             <li className="flex gap-[6px] w-[168px] items-center">
               <svg
@@ -76,7 +84,7 @@ const MobileMenu = ({ isOpen }) => {
                   href="ai/image/icons.svg#icon-Finance"
                 ></use>
               </svg>
-              <p className="text-[16px]">Finance</p>
+              <p className="text-[16px] cursor-pointer">Finance</p>
             </li>
             <li className="flex gap-[6px] w-[168px] items-center">
               <svg
@@ -90,7 +98,7 @@ const MobileMenu = ({ isOpen }) => {
                   href="ai/image/icons.svg#icon-Education"
                 ></use>
               </svg>
-              <p className="text-[16px]">Education</p>
+              <p className="text-[16px] cursor-pointer">Education</p>
             </li>
             <li className="flex gap-[6px] w-[168px] items-center">
               <svg
@@ -104,7 +112,7 @@ const MobileMenu = ({ isOpen }) => {
                   href="ai/image/icons.svg#icon-Analytics"
                 ></use>
               </svg>
-              <p className="text-[16px]">Analytics</p>
+              <p className="text-[16px] cursor-pointer">Analytics</p>
             </li>
             <li className="flex gap-[6px] w-[168px] items-center">
               <svg
@@ -118,23 +126,17 @@ const MobileMenu = ({ isOpen }) => {
                   href="ai/image/icons.svg#icon-Marketing"
                 ></use>
               </svg>
-              <p className="text-[16px]">Marketing</p>
+              <p className="text-[16px] cursor-pointer">Marketing</p>
             </li>
           </ul>
         </div>
-        <Link to="chat">Chat</Link>
-        <Link className="mt-4" to="pricing">
+        <Link className="cursor-pointer" to="chat">
+          Chat
+        </Link>
+        <Link className="mt-4 cursor-pointer " to="pricing">
           Pricing
         </Link>
-        {/* </ul> */}
-        <ul className="mt-4 flex gap-4 text-[16px]">
-          <li>
-            <button className="text-[16px]">Sing In</button>
-          </li>
-          <li>
-            <button className="text-[16px]">Sing Up</button>
-          </li>
-        </ul>
+        {children}
       </div>
     </div>
   );

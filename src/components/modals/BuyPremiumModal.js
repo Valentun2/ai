@@ -1,8 +1,15 @@
-const BuyPremiumModal = () => {
+const BuyPremiumModal = ({ setOpenBuyPremium }) => {
+  const handleClick = e => {
+    console.log(e.target);
+  };
+
   return (
-    <div className=" overflow-auto  w-[100%] h-screen fixed top-10  bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
+    <div className=" overflow-auto  w-[100%] h-screen fixed top-10 left-0  bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
       <div className=" overflow-auto max-h-[calc(100vh-150px)] w-[358px]  md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl relative scrollbar-none">
-        <button className="absolute right-0 top-0 md:right-3 md:top-3 bg-transparent">
+        <button
+          onClick={() => setOpenBuyPremium(false)}
+          className="cursor-pointer absolute right-0 top-0 md:right-3 md:top-3 bg-transparent"
+        >
           <svg
             width={24}
             height={24}
@@ -23,16 +30,19 @@ const BuyPremiumModal = () => {
           productivity!
         </p>
         <div className="overflow-hidden">
-          <ul className="flex gap-4 mt-4 overflow-x-auto scroll-smooth snap-x snap-mandatory whitespace-nowrap">
-            <li className="flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4">
+          <ul
+            onClick={handleClick}
+            className="flex gap-4 mt-4 overflow-x-auto scroll-smooth snap-x snap-mandatory whitespace-nowrap"
+          >
+            <li className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4">
               <p className="font-semibold text-[24px]">1 month</p>
               <p className="font-semibold text-[16px]">$15 /month</p>
             </li>
-            <li className="flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4">
+            <li className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4">
               <p className="font-semibold text-[24px]">3 months</p>
               <p className="font-semibold text-[16px]">$40 /3 month</p>
             </li>
-            <li className="flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4">
+            <li className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4">
               <p className="font-semibold text-[24px]">12 months</p>
               <p className="font-semibold text-[16px]">$140 /year</p>
             </li>
@@ -72,7 +82,7 @@ const BuyPremiumModal = () => {
           and acknowledge that all sales are final. Subscription renewals will
           be billed automatically unless canceled before the next billing cycle.
         </p>
-        <button className="bg-[#0099FF] text-black rounded-xl w-[100%] py-3 text-center mt-4">
+        <button className="cursor-pointer bg-[#0099FF] text-black rounded-xl w-[100%] py-3 text-center mt-4">
           Continue $40
         </button>
       </div>

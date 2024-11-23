@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import ChatPage from 'page/Chat/ChatPage';
 import PricingPage from 'page/Pricing/PricingPage';
+import { Toaster } from 'react-hot-toast';
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
         </Route>
         <Route path="chat" element={<ChatPage />} />
       </Routes>
+      <Toaster />
     </>
   );
 };

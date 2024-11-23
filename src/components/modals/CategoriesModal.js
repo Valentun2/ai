@@ -15,7 +15,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Vector-1"
             ></use>
           </svg>
-          <p className="text-[16px]">Productivity</p>
+          <p className="cursor-pointer text-[16px]">Productivity</p>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -29,7 +29,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Tech"
             ></use>
           </svg>
-          <p className="text-[16px]">Tech</p>
+          <p className="cursor-pointer text-[16px]">Tech</p>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -43,7 +43,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Finance"
             ></use>
           </svg>
-          <p className="text-[16px]">Finance</p>
+          <p className="cursor-pointer text-[16px]">Finance</p>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -57,7 +57,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Education"
             ></use>
           </svg>
-          <p className="text-[16px]">Education</p>
+          <p className="cursor-pointer text-[16px]">Education</p>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -71,7 +71,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Analytics"
             ></use>
           </svg>
-          <p className="text-[16px]">Analytics</p>
+          <p className="cursor-pointer text-[16px]">Analytics</p>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -85,7 +85,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Marketing"
             ></use>
           </svg>
-          <p className="text-[16px]">Marketing</p>
+          <p className="cursor-pointer text-[16px]">Marketing</p>
         </li>
       </ul>
     </div>

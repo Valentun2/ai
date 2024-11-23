@@ -216,7 +216,7 @@ const Policy = () => {
             </h5>
             <p className="text-[16px] mt-4">
               If you have any questions about these Terms, please contact us at
-              [contact email or address].
+              3960 Howard Hughes Parkway, Suite 500, Las Vegas, Nevada, 89169.
             </p>
           </li>
         </ul>

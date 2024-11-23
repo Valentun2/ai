@@ -1,13 +1,59 @@
-const ModalAI = ({ data, setVisible }) => {
+import { currentUser } from 'api/currentUser';
+import {
+  eventEmitter,
+  eventEmitter2,
+  modalEventEmitter,
+} from 'helpers/eventEmitter';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
+import { redirect, useNavigate } from 'react-router-dom';
+
+const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
+  const [isSubscription, setIsSubscription] = useState('');
+  const navigate = useNavigate();
+
   const handleClick = () => {
     setVisible(false);
   };
+
+  const handleClickStartChat = async e => {
+    try {
+      // Викликаємо функцію для отримання поточного користувача
+      const userData = await currentUser();
+      console.log(userData);
+      // Перевіряємо, чи є властивість subscription
+      if (!userData || !userData.subscription) {
+        console.error("Invalid user data or missing 'subscription'");
+        return;
+      }
+
+      console.log(userData); // Лог для налагодження
+
+      // Зберігаємо статус підписки в state
+      setIsSubscription(userData.subscription);
+
+      // Перевіряємо статус підписки
+      if (userData.subscription !== 'none') {
+        navigate('/chat'); // Перенаправлення
+      } else {
+        setVisible(false);
+        setOpenBuyPremium(true);
+      }
+    } catch (err) {
+      setVisible(false);
+      // console.log(eventEmitter.emit('start'));
+      eventEmitter2.emit('start');
+      console.error('Error fetching user data:', err); // Лог помилок
+      toast('You need to log in!');
+    }
+  };
+
   return (
-    <div className="w-[100%] h-[100vh] fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
+    <div className="z-50 top-[82px] w-[100%] h-[100vh] fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
       <div className=" z-10 relative sm:w-[358px] md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl">
         <button
           onClick={handleClick}
-          className="absolute right-[16px] top-4 bg-transparent"
+          className="cursor-pointer absolute right-[16px] top-4 bg-transparent"
         >
           <svg
             width={24}
@@ -108,7 +154,10 @@ const ModalAI = ({ data, setVisible }) => {
             </li>
           </ul>
         </div>
-        <button className="bg-white text-black rounded-xl w-[100%] py-3 text-center mt-4">
+        <button
+          onClick={handleClickStartChat}
+          className="bg-white text-black rounded-xl w-[100%] py-3 text-center mt-4"
+        >
           Start Chat
         </button>
       </div>

@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
+import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 
 const AnalyticsBlock = () => {
+  const [openBuyPremium, setOpenBuyPremium] = useState(false);
+
   const [dataAI, setDataAI] = useState({});
   const [visible, setVisible] = useState(false);
 
@@ -98,7 +101,16 @@ const AnalyticsBlock = () => {
           consolidates analytics for real-time insights.
         </Card>
       </ul>
-      {visible && <ModalAI data={dataAI} setVisible={setVisible} />}
+      {visible && (
+        <ModalAI
+          data={dataAI}
+          setVisible={setVisible}
+          setOpenBuyPremium={setOpenBuyPremium}
+        />
+      )}
+      {openBuyPremium && (
+        <BuyPremiumModal setOpenBuyPremium={setOpenBuyPremium} />
+      )}
     </div>
   );
 };
