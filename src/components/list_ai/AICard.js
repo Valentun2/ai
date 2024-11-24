@@ -6,12 +6,12 @@ const Card = ({ title, img, view, tag, children }) => {
         <svg
           width={16}
           height={16}
-          className="flex p-2 justify-center items-center w-4 h-4 bg-input rounded-[6px]"
+          className="flex justify-center items-center w-4 h-4 bg-input rounded-[6px]"
         >
           <use
             width={12}
             height={12}
-            href="./image/icons.svg##icon-right"
+            href="./ai/image/icons.svg##icon-right"
           ></use>
         </svg>
       </div>
