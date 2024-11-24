@@ -1,16 +1,18 @@
 const Card = ({ title, img, view, tag, children }) => {
   return (
     <li className="group w-[358px] md:w-[344px] lg:w-[288px] xl:w-[284px] 2xl:w-[404px] max-h-[297px] bg-cardsTransparent box-border border-[1px] border-cardsBorder flex flex-col  justify-between p-4 rounded-2xl hover:bg-cardsHover transition-all duration-500 relative">
-      <div className="absolute flex gap-2 right-5 pointer-events-none">
-        <p className=" text-cardsText text-[16px]  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
-          Start chat
-        </p>
+      <div className="absolute flex gap-2 right-5 pointer-events-none opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
+        <p className=" text-cardsText text-[16px]  ">Start chat</p>
         <svg
           width={16}
           height={16}
           className="flex p-2 justify-center items-center w-4 h-4 bg-input rounded-[6px]"
         >
-          <use width={12} height={12} href="./image/icons.svg#icon-right"></use>
+          <use
+            width={12}
+            height={12}
+            href="./image/icons.svg##icon-right"
+          ></use>
         </svg>
       </div>
       <div className=" pointer-events-none">
