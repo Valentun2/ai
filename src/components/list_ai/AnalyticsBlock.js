@@ -11,8 +11,9 @@ const AnalyticsBlock = () => {
   const [visible, setVisible] = useState(false);
 
   const handleClick = e => {
-    const arr = [...e.target.children[0].children];
-    const arr2 = [...e.target.children[1].children];
+    console.dir(e.target);
+    const arr = [...e.target.children[1].children];
+    const arr2 = [...e.target.children[2].children];
     const photo = arr[0].currentSrc;
     const name = arr[1].innerText;
     const text = arr[2].innerText;

@@ -32,6 +32,8 @@ const config = {
         whiteTransparent: 'rgba(255, 255, 255, 0.65)',
         inputTransparent: 'rgba(255, 255, 255, 0.25)',
         cardsTransparent: 'rgba(255, 255, 255, 0.05)',
+        cardsHover: 'rgba(255, 255, 255, 0.1)',
+
         cardsBorder: 'rgba(255, 255, 255, 0.6)',
         cardsText: 'rgba(255, 255, 255, 0.5)',
         input: 'rgba(255, 255, 255, 0.07)',
