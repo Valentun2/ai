@@ -221,7 +221,7 @@ const Header = () => {
             </div>
           </div>
         ) : (
-          <ul className="hidden md:flex gap-4 text-[16px]">
+          <ul className="hidden md:flex gap-4 text-[16px] items-center">
             <li>
               <button
                 onClick={() => openModal('loginModal')}
@@ -233,7 +233,7 @@ const Header = () => {
             <li>
               <button
                 onClick={() => openModal('authModal')}
-                className="text-[16px]"
+                className="text-[16px] bg-white text-black rounded-xl py-3 px-4 font-medium"
               >
                 Sing Up
               </button>

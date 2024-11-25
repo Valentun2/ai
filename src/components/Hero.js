@@ -52,7 +52,9 @@ const Hero = ({ click, handleSearch, handleClickReset }) => {
               </svg>
             </button>
           </div>
-          <button>Search</button>
+          <button className="bg-white text-black rounded-xl py-3 px-4 font-medium">
+            Search
+          </button>
         </form>
         <ul
           className="flex  flex-wrap pt-2 text-whiteTransparent text-[16px] gap-5 items-center"

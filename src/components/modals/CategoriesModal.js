@@ -18,7 +18,7 @@ const CategoriesModal = ({ setOpenCategories }) => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-Vector-1"
+              href="./image/icons.svg#icon-Vector-1"
             ></use>
           </svg>
           <Link to="#productivity">Productivity</Link>
@@ -32,7 +32,7 @@ const CategoriesModal = ({ setOpenCategories }) => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-Tech"
+              href="./image/icons.svg#icon-Tech"
             ></use>
           </svg>
           <Link to="#tech">Tech</Link>
@@ -46,7 +46,7 @@ const CategoriesModal = ({ setOpenCategories }) => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-Finance"
+              href="./image/icons.svg#icon-Finance"
             ></use>
           </svg>
           <Link to="#finance">Finance</Link>
@@ -60,7 +60,7 @@ const CategoriesModal = ({ setOpenCategories }) => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-Education"
+              href="./image/icons.svg#icon-Education"
             ></use>
           </svg>
           <Link to="#education">Education</Link>
@@ -74,7 +74,7 @@ const CategoriesModal = ({ setOpenCategories }) => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-Analytics"
+              href="./image/icons.svg#icon-Analytics"
             ></use>
           </svg>
           <Link to="#analytics">Analytics</Link>
@@ -88,7 +88,7 @@ const CategoriesModal = ({ setOpenCategories }) => {
             <use
               width={24}
               height={24}
-              href="ai/image/icons.svg#icon-Marketing"
+              href="./image/icons.svg#icon-Marketing"
             ></use>
           </svg>
           <Link to="#marketing">Marketing</Link>
