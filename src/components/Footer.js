@@ -20,12 +20,12 @@ const Footer = () => {
           <div>
             <h5 className="font-bold text-[17px]">Explore</h5>
             <ul className="flex flex-col mt-2 text-[17px] text-cardsText gap-2 ">
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 <Link onClick={handleClick} to="/">
                   Home
                 </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 <Link to="pricing">Pricing</Link>
               </li>
             </ul>
@@ -33,27 +33,29 @@ const Footer = () => {
           <div>
             <h5 className="font-bold text-[17px]">Categories</h5>
             <ul className="flex flex-col mt-2 text-[17px] text-cardsText gap-2">
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
                 <Link to="#productivity">Productivity AI</Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
                 <Link to="#tech">Tech AI</Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
                 <Link to="#Finance">Finance AI</Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
-                <Link to="#education">Education AI</Link>
+                <Link to="#education hover:text-border transition-all duration-500">
+                  Education AI
+                </Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
                 <Link to="#analytics">Analytics AI</Link>
               </li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 <Link to="#marketing">Marketing AI</Link>
               </li>
             </ul>
@@ -61,11 +63,13 @@ const Footer = () => {
           <div>
             <h5 className="font-bold text-[17px]">Legal</h5>
             <ul className="flex flex-col mt-2  text-[17px] text-cardsText gap-2 ">
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 <Link to={'terms'}>Terms</Link>{' '}
               </li>
-              <li className="cursor-pointer">Cookies</li>
-              <li className="cursor-pointer">
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
+                Cookies
+              </li>
+              <li className="cursor-pointer hover:text-border transition-all duration-500">
                 <Link to={'policy'}>Policy</Link>
               </li>
             </ul>
