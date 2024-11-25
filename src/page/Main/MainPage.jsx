@@ -1,7 +1,7 @@
 import Hero from 'components/Hero';
 import AIList from 'components/list_ai/AIList';
 import Support from 'components/support/Support';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function MainPage() {
   const [value, setValue] = useState('');

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import SignIn from './modals/SignIn';
 import AuthModal from './modals/AuthModal';
 import ProfileModal from './modals/ProfileModal';
-import axios, { CanceledError } from 'axios';
+import axios from 'axios';
 import useModal from 'hooks/modalHook';
 import { logout } from 'api/logout';
 import { eventEmitter2 } from 'helpers/eventEmitter';
