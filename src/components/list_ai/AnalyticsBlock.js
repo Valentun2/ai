@@ -55,7 +55,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Customer Insights'}
           view={654}
-          img={'./image/CustomerInsights.png'}
+          img={'./ai/image/CustomerInsights.png'}
           tag={'Analytics'}
           arr={arr}
         >
@@ -65,7 +65,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Sales Tracker'}
           view={54}
-          img={'./image/SalesTracker.png'}
+          img={'/image/SalesTracker.png'}
           tag={'Analytics'}
           arr={arr}
         >
@@ -75,7 +75,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Market Segmentation Tool'}
           view={32}
-          img={'./image/MarketSegmentationTool.png'}
+          img={'image/MarketSegmentationTool.png'}
           tag={'Analytics'}
           arr={arr}
         >
@@ -85,7 +85,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Conversion Rate Optimizer'}
           view={65}
-          img={'./image/ConversionRateOptimizer.png'}
+          img={'ai/image/ConversionRateOptimizer.png'}
           tag={'Analytics'}
           arr={arr}
         >
@@ -95,7 +95,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Social Media Analyzer'}
           view={23}
-          img={'./image/SocialMediaAnalyzer.png'}
+          img={'/ai/image/SocialMediaAnalyzer.png'}
           tag={'Analytics'}
           arr={arr}
         >
