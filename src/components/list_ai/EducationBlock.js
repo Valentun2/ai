@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ModalAI from 'components/modals/ModalAI';
 import ScrollToHash from 'helpers/Scroll';
 
-const EducationBlock = () => {
+const EducationBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
 
   const [dataAI, setDataAI] = useState({});
@@ -35,6 +35,7 @@ const EducationBlock = () => {
           view={4313}
           img={'./image/LanguageTutor.png'}
           tag={'Education'}
+          arr={arr}
         >
           Learn new languages with personalized lessons. Language Tutor adjusts
           to your level, making language learning engaging and effective.
@@ -44,6 +45,7 @@ const EducationBlock = () => {
           view={541}
           img={'./image/MathSolver.png'}
           tag={'Education'}
+          arr={arr}
         >
           Solve equations and understand math concepts easily. Math Solver
           explains each step, so you learn as you go.
@@ -53,6 +55,7 @@ const EducationBlock = () => {
           view={623}
           img={'./image/StudyOrganizer.png'}
           tag={'Education'}
+          arr={arr}
         >
           Keep track of assignments and exams. Study Organizer creates a
           personalized study schedule based on your goals.
@@ -62,6 +65,7 @@ const EducationBlock = () => {
           view={724}
           img={'./image/EssayAssistant.png'}
           tag={'Education'}
+          arr={arr}
         >
           Draft and improve your essays with AI guidance. Essay Assistant helps
           with structure, clarity, and grammar.
@@ -71,6 +75,7 @@ const EducationBlock = () => {
           view={135}
           img={'./image/FlashcardGenerator.png'}
           tag={'Education'}
+          arr={arr}
         >
           Boost your memory with custom flashcards. Flashcard Generator helps
           you review key concepts effectively.
@@ -80,6 +85,7 @@ const EducationBlock = () => {
           view={6234}
           img={'./image/QuizCreator.png'}
           tag={'Education'}
+          arr={arr}
         >
           Create quizzes to test your knowledge. Quiz Creator generates
           questions and tracks progress to aid your studies.
@@ -89,6 +95,7 @@ const EducationBlock = () => {
           view={154}
           img={'./image/ReadingComprehension.png'}
           tag={'Education'}
+          arr={arr}
         >
           Improve your understanding of complex texts. Comprehension Helper
           highlights key points and explains difficult concepts.
@@ -98,6 +105,7 @@ const EducationBlock = () => {
           view={314}
           img={'./image/ScienceLabHelper.png'}
           tag={'Education'}
+          arr={arr}
         >
           Conduct virtual experiments with ease. Lab Helper provides simulations
           and explanations for hands-on learning.

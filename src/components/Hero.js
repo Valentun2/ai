@@ -1,4 +1,4 @@
-const Hero = ({ click }) => {
+const Hero = ({ click, handleSearch, handleClickReset }) => {
   return (
     <section className="pt-[228px] md:pt-[325px]  overflow-hidden ">
       <div
@@ -24,8 +24,34 @@ const Hero = ({ click }) => {
           From bookkeeping to music creation, find a tailored AI model to
           simplify your work
         </p>
-        <form className="w-[65%] pt-6 flex gap-2">
-          <input className="w-[229px] md:w-[90%] h-[50px] border-[2px] focus:border-white focus:outline-none bg-transparent rounded-2xl  border-inputTransparent" />
+        <form
+          onSubmit={e => handleSearch(e)}
+          className="w-full xl:w-[75%] 2xl:w-[55%] pt-6 flex gap-2  "
+        >
+          <div className="relative w-full  flex gap-2 md:items-center ">
+            <input
+              name="search"
+              className=" pl-3  w-[100%] h-[50px] border-[2px] focus:border-white focus:outline-none bg-transparent rounded-2xl  border-inputTransparent"
+            />
+            <button
+              type="button"
+              className="absolute top-3 right-0 "
+              onClick={e => handleClickReset(e)}
+            >
+              {' '}
+              <svg
+                width={24}
+                height={24}
+                className="flex p-2 justify-center items-center w-8 h-8  rounded-[6px] pointer-events-none"
+              >
+                <use
+                  width={14}
+                  height={14}
+                  href="ai/image/icons.svg#icon-close"
+                ></use>
+              </svg>
+            </button>
+          </div>
           <button>Search</button>
         </form>
         <ul

@@ -4,7 +4,7 @@ import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import ScrollToHash from 'helpers/Scroll';
 
-const AnalyticsBlock = () => {
+const AnalyticsBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
 
   const [dataAI, setDataAI] = useState({});
@@ -37,6 +37,7 @@ const AnalyticsBlock = () => {
           view={832}
           img={'./image/DataVisualizer.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Transform raw data into clear visuals. Data Visualizer creates charts
           and graphs to help you see trends and patterns.
@@ -46,6 +47,7 @@ const AnalyticsBlock = () => {
           view={65}
           img={'./image/TrendForecaster.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Predict future trends with AI analysis. Trend Forecaster uses
           historical data to provide actionable insights.
@@ -55,6 +57,7 @@ const AnalyticsBlock = () => {
           view={654}
           img={'./image/CustomerInsights.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Understand your audience with customer data analysis. This AI
           identifies behaviors, preferences, and trends.
@@ -64,6 +67,7 @@ const AnalyticsBlock = () => {
           view={54}
           img={'./image/SalesTracker.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Monitor your sales performance over time. Sales Tracker analyzes
           patterns to help you optimize revenue.
@@ -73,15 +77,17 @@ const AnalyticsBlock = () => {
           view={32}
           img={'./image/MarketSegmentationTool.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Segment your market based on data-driven insights. This tool clusters
           customers by demographics, behavior, and needs.
         </Card>
         <Card
-          title={'ConversionRateOptimizer'}
+          title={'Conversion Rate Optimizer'}
           view={65}
           img={'./image/ConversionRateOptimizer.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Improve your conversion rates. This AI analyzes visitor behavior to
           suggest strategies for boosting engagement.
@@ -91,6 +97,7 @@ const AnalyticsBlock = () => {
           view={23}
           img={'./image/SocialMediaAnalyzer.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Measure the impact of your social campaigns. Social Media Analyzer
           reviews engagement, growth, and trends.
@@ -100,6 +107,7 @@ const AnalyticsBlock = () => {
           view={65}
           img={'./image/PerformanceDashboard.png'}
           tag={'Analytics'}
+          arr={arr}
         >
           Access all key metrics in one place. Performance Dashboard
           consolidates analytics for real-time insights.

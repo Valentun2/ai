@@ -113,10 +113,14 @@ const ProfileModal = ({ data, isOpen, setOpenProfile, className }) => {
           } after:transition-all after:duration-500 before:content-[''] before:absolute before:w-full before:h-[1px] before:bg-[rgba(255,255,255,0.35)] before:bottom-0 cursor-pointer`}
         >
           <li className=" relative w-1/2">
-            <p id="1">Profile</p>
+            <p className=" cursor-pointer" id="1">
+              Profile
+            </p>
           </li>
           <li className="w-1/2">
-            <p id="2">Subscription</p>
+            <p className=" cursor-pointer" id="2">
+              Subscription
+            </p>
           </li>
         </ul>
         {active ? (

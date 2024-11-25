@@ -5,7 +5,7 @@ import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 // import { useLocation } from 'react-router-dom';
 import ScrollToHash from 'helpers/Scroll';
 
-const ProductivityBlock = () => {
+const ProductivityBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
 
   const [dataAI, setDataAI] = useState({});
@@ -26,35 +26,12 @@ const ProductivityBlock = () => {
     });
     setVisible(true);
   };
-
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   const scrollToElement = () => {
-  //     if (location.hash) {
-  //       const targetElement = document.querySelector(location.hash);
-  //       if (targetElement) {
-  //         // Вираховуємо позицію елемента з урахуванням відступу
-  //         const topOffset =
-  //           targetElement.getBoundingClientRect().top + window.pageYOffset;
-  //         const offset = 200; // Задаємо відступ, наприклад, 100px
-
-  //         window.scrollTo({ top: topOffset - offset, behavior: 'smooth' });
-  //         window.history.replaceState(null, '', location.pathname);
-  //       } else {
-  //         console.warn(`Елемент з хешем "${location.hash}" не знайдено`);
-  //       }
-  //     }
-  //   };
-
-  //   scrollToElement();
-  // }, [location]);
-
   return (
     <div id="productivity" className="relative">
       <ScrollToHash offset={200} />
       <ul onClick={handleClick} className="flex flex-wrap  gap-4 mt-4">
         <Card
+          arr={arr}
           title={'AI Bookkeeping'}
           view={743}
           img={'./image/AI-Bookkeeper-logo.png'}
@@ -65,6 +42,7 @@ const ProductivityBlock = () => {
           growing your business.
         </Card>
         <Card
+          arr={arr}
           title={'Excel Assistant'}
           view={46}
           img={'./image/ExcelAssistant.png'}
@@ -75,6 +53,7 @@ const ProductivityBlock = () => {
           spreadsheet tasks and saves valuable time.
         </Card>
         <Card
+          arr={arr}
           title={'Prompt Generator'}
           view={1443}
           img={'./image/PromptGenerator.png'}
@@ -85,6 +64,7 @@ const ProductivityBlock = () => {
           spreadsheet tasks and saves valuable time.
         </Card>
         <Card
+          arr={arr}
           title={'Email Composer'}
           view={821}
           img={'./image/EmailComposer.png'}
@@ -95,6 +75,7 @@ const ProductivityBlock = () => {
           to follow-ups with AI-powered.
         </Card>
         <Card
+          arr={arr}
           title={'Schedule Optimizer'}
           view={114}
           img={'./image/ScheduleOptimizer.png'}
@@ -105,6 +86,7 @@ const ProductivityBlock = () => {
           balancing efficiency with your work-life needs.
         </Card>
         <Card
+          arr={arr}
           title={'Content Outliner'}
           view={813}
           img={'./image/ContentOutliner.png'}
@@ -115,6 +97,7 @@ const ProductivityBlock = () => {
           organized outlines tailored to your audience.
         </Card>
         <Card
+          arr={arr}
           title={'Task Prioritizer'}
           view={32}
           img={'./image/TaskPrioritizer.png'}
@@ -125,6 +108,7 @@ const ProductivityBlock = () => {
           tackle the most critical items first.
         </Card>
         <Card
+          arr={arr}
           title={'Document Summarizer'}
           view={2}
           img={'./image/DocumentSummarizer.png'}

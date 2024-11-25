@@ -1,6 +1,12 @@
-const CategoriesModal = () => {
+import { Link } from 'react-router-dom';
+
+const CategoriesModal = ({ setOpenCategories }) => {
   return (
-    <div className="w-[400px] bg-blackTransparent p-6">
+    <div
+      onMouseEnter={() => setOpenCategories(true)}
+      onMouseLeave={() => setOpenCategories(false)}
+      className="absolute left-1/2 translate-x-[-200px] w-[400px] bg-blackTransparent p-6"
+    >
       <h4 className="font-semibold text-[24px]">Categories</h4>
       <ul className="flex flex-wrap justify-between gap-y-4 mt-4">
         <li className="flex gap-[6px] w-[168px] items-center">
@@ -15,7 +21,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Vector-1"
             ></use>
           </svg>
-          <p className="cursor-pointer text-[16px]">Productivity</p>
+          <Link to="#productivity">Productivity</Link>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -29,7 +35,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Tech"
             ></use>
           </svg>
-          <p className="cursor-pointer text-[16px]">Tech</p>
+          <Link to="#tech">Tech</Link>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -43,7 +49,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Finance"
             ></use>
           </svg>
-          <p className="cursor-pointer text-[16px]">Finance</p>
+          <Link to="#finance">Finance</Link>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -57,7 +63,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Education"
             ></use>
           </svg>
-          <p className="cursor-pointer text-[16px]">Education</p>
+          <Link to="#education">Education</Link>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -71,7 +77,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Analytics"
             ></use>
           </svg>
-          <p className="cursor-pointer text-[16px]">Analytics</p>
+          <Link to="#analytics">Analytics</Link>
         </li>
         <li className="flex gap-[6px] w-[168px] items-center">
           <svg
@@ -85,7 +91,7 @@ const CategoriesModal = () => {
               href="ai/image/icons.svg#icon-Marketing"
             ></use>
           </svg>
-          <p className="cursor-pointer text-[16px]">Marketing</p>
+          <Link to="#marketing">Marketing</Link>
         </li>
       </ul>
     </div>

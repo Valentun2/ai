@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react';
 import SignIn from './modals/SignIn';
 import AuthModal from './modals/AuthModal';
 import ProfileModal from './modals/ProfileModal';
-import axios from 'axios';
+import axios, { CanceledError } from 'axios';
 import useModal from 'hooks/modalHook';
 import { logout } from 'api/logout';
 import { eventEmitter2 } from 'helpers/eventEmitter';
 import toast from 'react-hot-toast';
+import CategoriesModal from './modals/CategoriesModal';
+import { currentUser } from 'api/currentUser';
 export const setBearerToken = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   console.log('Bearer Token Set:', axios.defaults.headers.common.Authorization);
@@ -24,6 +26,8 @@ const Header = () => {
   const [isOpenSignIn, setIsOpenSignIn] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
+  const [openCategories, setOpenCategories] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpenProfile, setIsOpenProfile] = useState(false);
 
@@ -39,8 +43,18 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // setIsOpenProfile(true);
-  }, [token]);
+    const fetchCurrentUserData = async () => {
+      try {
+        const data = await currentUser(); // Припускається, що currentUser() повертає проміс
+        setUserData({ ...data });
+        console.log(data);
+      } catch (error) {
+        console.log('Error fetching user data:', error);
+      }
+    };
+
+    fetchCurrentUserData();
+  }, []);
 
   const handleClick = e => {
     setIsOpen(!isOpen);
@@ -135,7 +149,11 @@ const Header = () => {
         </div>
         <ul className="hidden md:flex text-whiteTransparent text-[14px] gap-4">
           <li>
-            <div className="flex items-center gap-1">
+            <div
+              className="flex items-center gap-1"
+              onMouseEnter={() => setOpenCategories(true)}
+              onMouseLeave={() => setOpenCategories(false)}
+            >
               <p>AI Categories</p>
               <svg
                 width={16}
@@ -149,7 +167,10 @@ const Header = () => {
                 ></use>
               </svg>
             </div>
-            <div></div>
+            {openCategories && (
+              <CategoriesModal setOpenCategories={setOpenCategories} />
+            )}
+            {/* <div></div> */}
           </li>
           <Link
             onClick={() => {
@@ -171,7 +192,7 @@ const Header = () => {
           >
             <div className="hidden md:flex gap-1 items-center">
               <img className="w-4" alt="avt" src="./image/icon-people.png" />
-              <p>Profile</p>
+              <p className=" cursor-pointer">Profile</p>
               <svg
                 width={16}
                 height={12}
@@ -191,8 +212,12 @@ const Header = () => {
                   : 'opacity-0 -translate-y-2 pointer-events-none'
               }`}
             >
-              <p onClick={handleOpenProfile}>Settings</p>
-              <p onClick={logoutUser}>Log out</p>
+              <p className=" cursor-pointer" onClick={handleOpenProfile}>
+                Settings
+              </p>
+              <p className=" cursor-pointer" onClick={logoutUser}>
+                Log out
+              </p>
             </div>
           </div>
         ) : (

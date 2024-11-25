@@ -4,7 +4,7 @@ import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import ScrollToHash from 'helpers/Scroll';
 
-const TechBlock = () => {
+const TechBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
 
   const [dataAI, setDataAI] = useState({});
@@ -32,6 +32,7 @@ const TechBlock = () => {
 
       <ul onClick={handleClick} className="flex flex-wrap  gap-4 mt-4">
         <Card
+          arr={arr}
           title={'Code Debugger'}
           view={314}
           img={'./image/CodeDebugger.png'}
@@ -41,6 +42,7 @@ const TechBlock = () => {
           highlights errors and suggests fixes, so you can code with confidence.
         </Card>
         <Card
+          arr={arr}
           title={'API Integrator'}
           view={624}
           img={'./image/APIIntegrator.png'}
@@ -50,6 +52,7 @@ const TechBlock = () => {
           you connect services smoothly and troubleshoot common issues.
         </Card>
         <Card
+          arr={arr}
           title={'Code Optimizer'}
           view={8125}
           img={'./image/CodeOptimizer.png'}
@@ -59,6 +62,7 @@ const TechBlock = () => {
           improvements, reducing load times and boosting efficiency.
         </Card>
         <Card
+          arr={arr}
           title={'Data Cleaner'}
           view={1924}
           img={'./image/DataCleaner.png'}
@@ -68,6 +72,7 @@ const TechBlock = () => {
           fills gaps, and structures data to ensure accuracy.
         </Card>
         <Card
+          arr={arr}
           title={'Script Generator'}
           view={23}
           img={'./image/ScriptGenerator.png'}
@@ -77,6 +82,7 @@ const TechBlock = () => {
           code snippets for repetitive actions, saving time and effort.
         </Card>
         <Card
+          arr={arr}
           title={'DevOps Assistant'}
           view={172}
           img={'./image/DevOpsAssistant.png'}
@@ -86,6 +92,7 @@ const TechBlock = () => {
           deployment, monitoring, and automation.
         </Card>
         <Card
+          arr={arr}
           title={'Version Control Helper'}
           view={91}
           img={'./image/VersionControlHelper.png'}
@@ -95,7 +102,8 @@ const TechBlock = () => {
           organizes commits, tracks updates, and ensures smooth collaboration.
         </Card>
         <Card
-          title={'SystemHealthMonitor'}
+          arr={arr}
+          title={'System Health Monitor'}
           view={145}
           img={'./image/SystemHealthMonitor.png'}
           tag={'Tech'}
