@@ -55,7 +55,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Customer Insights'}
           view={654}
-          img={'./ai/image/CustomerInsights.png'}
+          img={'./image/CustomerInsights.png'}
           tag={'Analytics'}
           arr={arr}
         >
@@ -65,7 +65,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Sales Tracker'}
           view={54}
-          img={'/image/SalesTracker.png'}
+          img={'./image/SalesTracker.png'}
           tag={'Analytics'}
           arr={arr}
         >
@@ -85,7 +85,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Conversion Rate Optimizer'}
           view={65}
-          img={'ai/image/ConversionRateOptimizer.png'}
+          img={'./image/ConversionRateOptimizer.png'}
           tag={'Analytics'}
           arr={arr}
         >
