@@ -12,7 +12,7 @@ const Card = ({ title, img, view, tag, arr, children }) => {
             <use
               width={12}
               height={12}
-              href="./ai/image/icons.svg##icon-right"
+              href="./image/icons.svg##icon-right"
             ></use>
           </svg>
         </div>

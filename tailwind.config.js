@@ -43,7 +43,7 @@ const config = {
         modalBorder: 'rgba(255, 255, 255, 0.15)',
         blackTransparent: 'rgba(0, 0, 0, 0.7)',
         blackChat: 'rgba(0, 0, 0, 0.5)',
-
+        border: 'rgba(255, 255, 255, 0.9)',
         bgCards: 'rgba(255, 255, 255, 0.2)',
       },
     },

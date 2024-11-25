@@ -55,27 +55,27 @@ const Hero = ({ click, handleSearch, handleClickReset }) => {
           <button>Search</button>
         </form>
         <ul
-          className="flex flex-wrap pt-2 text-whiteTransparent text-[16px] gap-5 items-center"
+          className="flex  flex-wrap pt-2 text-whiteTransparent text-[16px] gap-5 items-center"
           onClick={e => {
             click(e);
           }}
         >
-          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent">
+          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent hover:bg-modalBorder hover:border-border">
             Productivity
           </li>
-          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent">
+          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent hover:bg-modalBorder hover:border-border">
             Tech
           </li>
-          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent">
+          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent hover:bg-modalBorder hover:border-border">
             Finance
           </li>
-          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent">
+          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent hover:bg-modalBorder hover:border-border">
             Education
           </li>
-          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent">
+          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent hover:bg-modalBorder hover:border-border">
             Analytics
           </li>
-          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent">
+          <li className="px-3 py-[6px] border rounded-xl border-inputTransparent hover:bg-modalBorder hover:border-border">
             Marketing
           </li>
         </ul>
