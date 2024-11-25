@@ -131,7 +131,7 @@ const Header = () => {
           <svg
             width={24}
             height={24}
-            className="flex p-2 justify-center items-center w-10 h-10 bg-input rounded-[6px]"
+            className="flex justify-center items-center w-10 h-10 bg-input rounded-[6px]"
           >
             <use
               width={24}
