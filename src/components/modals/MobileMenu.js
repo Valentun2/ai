@@ -34,7 +34,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
               <use
                 width={12}
                 height={12}
-                href="ai/image/icons.svg#icon-Arrow"
+                href="./image/icons.svg#icon-Arrow"
               ></use>
             </svg>
           </div>{' '}
@@ -52,7 +52,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
                 <use
                   width={24}
                   height={24}
-                  href="ai/image/icons.svg#icon-Vector-1"
+                  href="./image/icons.svg#icon-Vector-1"
                 ></use>
               </svg>
               <p className="text-[16px] cursor-pointer">Productivity</p>
@@ -66,7 +66,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
                 <use
                   width={24}
                   height={24}
-                  href="ai/image/icons.svg#icon-Tech"
+                  href="./image/icons.svg#icon-Tech"
                 ></use>
               </svg>
               <p className="text-[16px] cursor-pointer">Tech</p>
@@ -80,7 +80,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
                 <use
                   width={24}
                   height={24}
-                  href="ai/image/icons.svg#icon-Finance"
+                  href="./image/icons.svg#icon-Finance"
                 ></use>
               </svg>
               <p className="text-[16px] cursor-pointer">Finance</p>
@@ -94,7 +94,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
                 <use
                   width={24}
                   height={24}
-                  href="ai/image/icons.svg#icon-Education"
+                  href="./image/icons.svg#icon-Education"
                 ></use>
               </svg>
               <p className="text-[16px] cursor-pointer">Education</p>
@@ -108,7 +108,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
                 <use
                   width={24}
                   height={24}
-                  href="ai/image/icons.svg#icon-Analytics"
+                  href="./image/icons.svg#icon-Analytics"
                 ></use>
               </svg>
               <p className="text-[16px] cursor-pointer">Analytics</p>
@@ -122,7 +122,7 @@ const MobileMenu = ({ isOpen, setIsOpen, children }) => {
                 <use
                   width={24}
                   height={24}
-                  href="ai/image/icons.svg#icon-Marketing"
+                  href="./image/icons.svg#icon-Marketing"
                 ></use>
               </svg>
               <p className="text-[16px] cursor-pointer">Marketing</p>
