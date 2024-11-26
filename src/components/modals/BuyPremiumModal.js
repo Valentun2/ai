@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const BuyPremiumModal = ({ setOpenBuyPremium }) => {
   // const [prise, setPrise] = useState('$40');
 
