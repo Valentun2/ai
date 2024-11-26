@@ -1,13 +1,22 @@
 const AnnualPlan = () => {
   return (
-    <li className="w-full md:w-[363px] bg-bgCards rounded-[32px]  py-10 px-10  backdrop-blur-lg">
+    <li className="w-full md:w-[363px] bg-input rounded-[32px]  py-10 px-10  backdrop-blur-lg hover:bg-bgCards transition-all duration-500 ">
       <h4 className="font-semibold text-[24px]">Annual Plan</h4>
       <p className="text-[16px] text-cardsBorder mt-1">
         Loyal users who demand the best value for money{' '}
       </p>
-      <p className=" mt-8 text-[16px] text-princingText">
-        <span className="text-[48px] font-semibold">$140</span>/ per year
+      <p className=" mt-8 text-[16px] text-pricingText">
+        <span className="text-[32px] font-semibold">0.33 USD</span>/ per day
       </p>
+      <div className="flex gap-3">
+        <p className="py-[6px] px-3 border border-pricingBorder  inline-block rounded-xl text-[14px]">
+          12 month
+        </p>
+        <p className="py-[6px] px-3 border border-pricingBorder  inline-block rounded-xl text-[14px]">
+          save 70%
+        </p>
+      </div>
+
       <button className="py-3 text-center w-full mt-[75px] bg-gradient-to-b from-[#0099FF] to-[#0066FF]  rounded-xl">
         Get Started
       </button>

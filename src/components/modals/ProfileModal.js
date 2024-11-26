@@ -24,7 +24,6 @@ const ProfileModal = ({ data, isOpen, setOpenProfile, className }) => {
     e.preventDefault();
 
     try {
-      // Формуємо об'єкт з даними
       const dataUser = {
         firstName: e.target.firstName.value,
         lastName: e.target.lastName.value,
@@ -34,32 +33,23 @@ const ProfileModal = ({ data, isOpen, setOpenProfile, className }) => {
         subscription: data.subscription,
       };
 
-      // Валідація за схемою Yup
       await validationUpdateSchema.validate(dataUser, { abortEarly: false });
 
-      // Відправка даних на бекенд
       const newDataUser = await updateData(dataUser);
 
-      // Логування оновлених даних
       console.log(newDataUser);
 
-      // Очищення форми
       e.target.reset();
 
-      // Повідомлення про успішне оновлення (можна замінити на ваш метод)
       toast('User updated successfully!');
     } catch (err) {
       if (err.name === 'ValidationError') {
-        // Обробка помилок Yup
         const newErrors = {};
         err.inner.forEach(validationError => {
           newErrors[validationError.path] = validationError.message;
         });
-        setErrors(newErrors); // Оновлюємо стан із помилками
+        setErrors(newErrors);
       } else {
-        // Обробка помилок бекенду
-        console.error('Backend error:', err.message);
-
         toast(
           err.response?.data?.message ||
             'Something went wrong. Please try again.'
@@ -69,30 +59,23 @@ const ProfileModal = ({ data, isOpen, setOpenProfile, className }) => {
   };
 
   const deleteAccount = async e => {
-    // Підтвердження дії користувачем
     const isConfirmed = window.confirm(
       'Are you sure you want to delete your account? This action cannot be undone.'
     );
 
-    if (!isConfirmed) return; // Якщо користувач скасував, виходимо
+    if (!isConfirmed) return;
 
     try {
-      // Виклик функції для видалення користувача
       await deleteUser();
 
-      // Очищення локального сховища (якщо є токен)
       localStorage.removeItem('token');
 
-      // Повідомлення користувачеві
       toast('Account deleted successfully.');
 
-      // Перенаправлення на головну або сторінку входу
       navigate('/');
     } catch (err) {
-      // Обробка помилок
       console.error('Error deleting account:', err.message);
 
-      // Повідомлення про помилку
       toast(
         err.response?.data?.message || 'Something went wrong. Please try again.'
       );
@@ -127,11 +110,7 @@ const ProfileModal = ({ data, isOpen, setOpenProfile, className }) => {
           <>
             <div className="mt-6 flex flex-col justify-center items-center">
               <div>
-                <img
-                  alt="avt"
-                  className="w-10"
-                  src="ai/image/icon-people.png"
-                />
+                <img alt="avt" className="w-10" src="./image/icon-people.png" />
               </div>
               <p className="mt-4 text-[18px]">{`${data.firstName}  ${data.lastName}`}</p>
               <p className="text-[14px]">{data.email}</p>

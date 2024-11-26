@@ -45,7 +45,7 @@ const Header = () => {
   useEffect(() => {
     const fetchCurrentUserData = async () => {
       try {
-        const data = await currentUser(); // Припускається, що currentUser() повертає проміс
+        const data = await currentUser();
         setUserData({ ...data });
         console.log(data);
       } catch (error) {
@@ -59,12 +59,6 @@ const Header = () => {
   const handleClick = e => {
     setIsOpen(!isOpen);
   };
-  // const openModal = e => {
-  //   if (isAuthModalOpen) {
-  //     setIsAuthModalOpen(false);
-  //   }
-  //   setIsOpenSignIn(!isOpenSignIn);
-  // };
 
   const logoutUser = async () => {
     await logout();
@@ -92,10 +86,8 @@ const Header = () => {
       openModal('loginModal');
     };
 
-    // Додаємо слухач події
     eventEmitter2.on('start', handleStart);
 
-    // Повертаємо функцію для відписки
     return () => {
       eventEmitter2.off('start', handleStart);
     };
@@ -106,17 +98,6 @@ const Header = () => {
       console.log('profile');
       setIsOpenProfile(true);
     });
-    // const handleProfile = () => {
-    //   setOpenProfile(true);
-    // };
-    console.log('object');
-    // Додаємо слухач події
-    // eventEmitter.on('profile', handleProfile);
-
-    // Повертаємо функцію для відписки
-    // return () => {
-    //   eventEmitter.off('profile', handleProfile);
-    // };
   }, []);
   return (
     <header

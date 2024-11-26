@@ -95,7 +95,7 @@ const AnalyticsBlock = ({ arr }) => {
         <Card
           title={'Social Media Analyzer'}
           view={23}
-          img={'/ai/image/SocialMediaAnalyzer.png'}
+          img={'./image/SocialMediaAnalyzer.png'}
           tag={'Analytics'}
           arr={arr}
         >

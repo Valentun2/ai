@@ -45,7 +45,7 @@ const BuyPremiumModal = ({ setOpenBuyPremium }) => {
               className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4"
             >
               <p className="font-semibold text-[24px]">1 month</p>
-              <p className="font-semibold text-[16px]">$15 /month</p>
+              <p className="font-semibold text-[16px]">0.67 USD</p>
             </li>
             <li
               id="2"
