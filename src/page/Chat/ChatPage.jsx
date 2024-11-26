@@ -114,16 +114,19 @@ const ChatPage = () => {
             </div>
             <div className="hidden md:flex gap-1 items-center">
               <img className="w-4" alt="avt" src="./image/icon-people.png" />
-              <p onClick={handleClick}>Profile</p>
+              <p
+                className="overflow-hidden text-ellipsis whitespace-nowrap"
+                onClick={handleClick}
+              >{`${data.firstName} ${data.lastName}`}</p>{' '}
               <svg
-                width={16}
-                height={12}
+                width={24}
+                height={24}
                 className="flex justify-center items-center rounded-[6px]"
               >
                 <use
-                  width={12}
-                  height={12}
-                  href="./image/icons.svg#icon-Arrow"
+                  width={16}
+                  height={16}
+                  href="./image/icons.svg#icon-Vector-13"
                 ></use>
               </svg>
             </div>
@@ -220,11 +223,14 @@ const ChatPage = () => {
                 getmyhelp.ai
               </Link>
             </div>
-            <div className="flex gap-1 items-center border-y-[2px] border-y-pricingBorder p-4">
-              <img className="w-4" alt="avt" src="./image/icon-people.png" />
-              <p
-                onClick={handleClick}
-              >{`${data.firstName} ${data.lastName}`}</p>
+            <div className="flex gap-1 items-center border-y-[2px] border-y-pricingBorder p-4 justify-between">
+              <div>
+                <img className="w-4" alt="avt" src="./image/icon-people.png" />
+                <p
+                  className="overflow-hidden text-ellipsis whitespace-nowrap"
+                  onClick={handleClick}
+                >{`${data.firstName} ${data.lastName}`}</p>
+              </div>
               <svg
                 width={16}
                 height={12}
@@ -233,7 +239,7 @@ const ChatPage = () => {
                 <use
                   width={12}
                   height={12}
-                  href="./image/icons.svg#icon-Arrow"
+                  href="./image/icons.svg#icon-Vector-13"
                 ></use>
               </svg>
             </div>
