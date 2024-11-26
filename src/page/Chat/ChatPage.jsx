@@ -112,20 +112,20 @@ const ChatPage = () => {
                 getmyhelp.ai
               </Link>
             </div>
-            <div className="hidden md:flex gap-1 items-center">
+            <div className="hidden md:flex gap-1 items-center ">
               <img className="w-4" alt="avt" src="./image/icon-people.png" />
               <p
                 className="overflow-hidden text-ellipsis whitespace-nowrap"
                 onClick={handleClick}
               >{`${data.firstName} ${data.lastName}`}</p>{' '}
               <svg
-                width={24}
-                height={24}
+                width={20}
+                height={20}
                 className="flex justify-center items-center rounded-[6px]"
               >
                 <use
-                  width={16}
-                  height={16}
+                  width={20}
+                  height={20}
                   href="./image/icons.svg#icon-Vector-13"
                 ></use>
               </svg>
