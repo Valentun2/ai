@@ -18,7 +18,7 @@ const SupportForm = () => {
       <label className="flex flex-col mt-2  text-cardsText text-[12px]">
         How can we help?
         <textarea
-          className="h-[184px] mt-1 bg-input pl-3 pt-2 border-[2px] placeholder-inputText border-transparent focus:border-white focus:outline-none "
+          className="resize-none h-[184px] mt-1 bg-input pl-3 pt-2 border-[2px] placeholder-inputText border-transparent focus:border-white focus:outline-none "
           placeholder="Tell us how we can help you..."
         />
       </label>
