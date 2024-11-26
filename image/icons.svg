@@ -49,5 +49,8 @@
 <symbol id="icon-right" viewBox="0 0 44 32">
 <path fill="none" stroke="#fff" style="stroke: var(--color1, #fff)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="4" d="M0.084 15.916h40M27.084 29.916l14-14-14-14"></path>
 </symbol>
+<symbol id="icon-Vector-12" viewBox="0 0 36 32">
+<path fill="#fff" style="fill: var(--color1, #fff)" d="M4.247 11.057l1.2 2.097c0.764 1.338 1.145 2.006 1.145 2.74s-0.381 1.402-1.145 2.737l-1.2 2.1c-3.416 5.98-5.124 8.968-3.794 10.453 1.333 1.482 4.49 0.102 10.798-2.657l17.318-7.577c4.953-2.166 7.431-3.251 7.431-5.055s-2.478-2.889-7.431-5.055l-17.318-7.577c-6.308-2.759-9.465-4.139-10.798-2.657s0.378 4.47 3.794 10.453z"></path>
+</symbol>
 </defs>
 </svg>
