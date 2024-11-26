@@ -12,10 +12,10 @@ const Polisy = () => {
         </h3>
         <p className="text-[16px] mt-8">Last Updated: [Date]</p>
         <p className="text-[16px] mt-8">
-          At [Platform Name], we are committed to protecting your privacy. This
-          Privacy Policy explains what information we collect, how we use it,
-          and your rights regarding that information. By using our platform, you
-          agree to this Privacy Policy.
+          At INEFFACEABLE ENTERPRISES, we are committed to protecting your
+          privacy. This Privacy Policy explains what information we collect, how
+          we use it, and your rights regarding that information. By using our
+          platform, you agree to this Privacy Policy.
         </p>
         <ul className="flex flex-col mt-8 gap-8">
           <li>
@@ -104,7 +104,7 @@ const Polisy = () => {
               Depending on your jurisdiction, you may have the right to access,
               update, or delete your personal information, as well as the right
               to withdraw consent to data processing. To exercise these rights,
-              please contact us at [contact email].
+              please contact us at Payteam@worldtools.ai.
             </p>
           </li>
           <li>
@@ -124,7 +124,7 @@ const Polisy = () => {
             </h5>
             <p className="text-[16px] mt-4">
               If you have questions about our Privacy Policy or data practices,
-              please reach out to us at [contact email].
+              please reach out to us at Payteam@worldtools.ai.
             </p>
           </li>
         </ul>

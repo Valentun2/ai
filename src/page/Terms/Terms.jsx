@@ -12,7 +12,7 @@ const Terms = () => {
         </h3>
         <p className="text-[16px] mt-8">Last Updated: [Date]</p>
         <p className="text-[16px] mt-8">
-          Welcome to [Platform Name]. By accessing or using our services, you
+          Welcome to worldtools.ai. By accessing or using our services, you
           agree to be bound by these Terms of Service (the “Terms”). These Terms
           apply to all users of the site, including without limitation users who
           are browsers, customers, and others. Please read these Terms carefully
@@ -141,9 +141,9 @@ const Terms = () => {
             <p className="text-[16px] mt-4">
               All content, software, and other materials on our platform,
               including but not limited to text, graphics, logos, images, and
-              software, are the property of [Platform Name] or its licensors.
-              You may not reproduce, distribute, modify, or create derivative
-              works without our prior written consent.
+              software, are the property of worldtools.ai or its licensors. You
+              may not reproduce, distribute, modify, or create derivative works
+              without our prior written consent.
             </p>
           </li>
           <li>
@@ -164,8 +164,8 @@ const Terms = () => {
               10. Limitation of Liability
             </h5>
             <p className="text-[16px] mt-4">
-              To the fullest extent permitted by law, [Platform Name] and its
-              affiliates will not be liable for any direct, indirect,
+              To the fullest extent permitted by law, INEFFACEABLE ENTERPRISES
+              and its affiliates will not be liable for any direct, indirect,
               incidental, consequential, or punitive damages arising from your
               use of, or inability to use, the platform, even if we have been
               advised of the possibility of such damages.
@@ -176,11 +176,11 @@ const Terms = () => {
               11. Indemnification
             </h5>
             <p className="text-[16px] mt-4">
-              You agree to defend, indemnify, and hold harmless [Platform Name]
-              and its affiliates from and against any claims, damages,
-              obligations, losses, liabilities, costs, or expenses arising from
-              your use of the platform, breach of these Terms, or violation of
-              any law or third-party rights.
+              You agree to defend, indemnify, and hold harmless INEFFACEABLE
+              ENTERPRISES and its affiliates from and against any claims,
+              damages, obligations, losses, liabilities, costs, or expenses
+              arising from your use of the platform, breach of these Terms, or
+              violation of any law or third-party rights.
             </p>
           </li>
           <li>
