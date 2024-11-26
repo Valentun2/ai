@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 const BuyPremiumModal = ({ setOpenBuyPremium }) => {
-  const [prise, setPrise] = useState('$40');
+  // const [prise, setPrise] = useState('$40');
 
-  const handleClick = e => {
-    console.dir(e.target.dataset.prise);
-    setPrise(e.target.dataset.prise);
-  };
+  // const handleClick = e => {
+  //   console.dir(e.target.dataset.prise);
+  //   setPrise(e.target.dataset.prise);
+  // };
 
   return (
     <div className="z-10 overflow-auto  w-[100%] h-screen fixed top-10 left-0  bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
@@ -36,32 +36,41 @@ const BuyPremiumModal = ({ setOpenBuyPremium }) => {
         </p>
         <div className="overflow-hidden">
           <ul
-            onClick={handleClick}
-            className="flex gap-4 mt-4 overflow-x-auto scroll-smooth snap-x snap-mandatory whitespace-nowrap scrollbar-none"
+            // onClick={handleClick}
+            className="flex gap-[14px] mt-4 overflow-x-auto scroll-smooth snap-x snap-mandatory whitespace-nowrap scrollbar-none"
           >
             <li
               id="1"
               data-prise="$15"
-              className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4"
+              className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4 hover:bg-cardsHover transition-all duration-500 hover:border-white"
             >
               <p className="font-semibold text-[24px]">1 month</p>
-              <p className="font-semibold text-[16px]">0.67 USD</p>
+              <p className="font-semibold text-[16px]">
+                0.67 USD
+                <span className="text-[12px] font-medium"> / per day</span>
+              </p>
             </li>
             <li
               id="2"
               data-prise="$40"
-              className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4"
+              className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4 hover:bg-cardsHover transition-all duration-500 hover:border-white"
             >
               <p className="font-semibold text-[24px]">3 months</p>
-              <p className="font-semibold text-[16px]">$40 /3 month</p>
+              <p className="font-semibold text-[16px]">
+                0.49 USD
+                <span className="text-[12px] font-medium"> / per day</span>
+              </p>
             </li>
             <li
               data-prise="$140"
               id="3"
-              className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4"
+              className="cursor-pointer flex-none w-[173px] h-[212px] border border-modalBorder rounded-2xl p-4 hover:bg-cardsHover transition-all duration-500 hover:border-white"
             >
               <p className="font-semibold text-[24px]">12 months</p>
-              <p className="font-semibold text-[16px]">$140 /year</p>
+              <p className="font-semibold text-[16px]">
+                0.33 USD{' '}
+                <span className="text-[12px] font-medium"> / per day</span>
+              </p>
             </li>
           </ul>
         </div>
@@ -100,7 +109,7 @@ const BuyPremiumModal = ({ setOpenBuyPremium }) => {
           be billed automatically unless canceled before the next billing cycle.
         </p>
         <button className="cursor-pointer bg-[#0099FF] text-black rounded-xl w-[100%] py-3 text-center mt-4">
-          {` Continue ${prise}`}
+          {` Continue`}
         </button>
       </div>
     </div>
