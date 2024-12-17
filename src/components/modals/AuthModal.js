@@ -118,7 +118,7 @@ const AuthModal = ({ openModal, setToken, closeModal, setUserData }) => {
               name={'firstName'}
               styles={'w-full md:w-[268px]'}
               value={'Michael'}
-              labelText={'First value'}
+              labelText={'First name'}
               err={errors.firstName}
             />
             <InputModal
@@ -126,7 +126,7 @@ const AuthModal = ({ openModal, setToken, closeModal, setUserData }) => {
               name={'lastName'}
               styles={'w-full md:w-[268px]'}
               value={'Smith'}
-              labelText={'Last value'}
+              labelText={'Last name'}
               err={errors.lastName}
             />
           </div>
