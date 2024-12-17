@@ -2,7 +2,6 @@ import { validationSupportSchema } from 'shemas/shemas';
 import SupportInput from './SupportInput';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import emailjs from 'emailjs-com';
 
 const SupportForm = () => {
   const [errors, setErrors] = useState({});
@@ -23,25 +22,25 @@ const SupportForm = () => {
     try {
       await validationSupportSchema.validate(data, { abortEarly: false });
       setErrors({});
-      const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-      const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+      // const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      // const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      // const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-      if (!serviceID || !templateID || !publicKey) {
-        throw new Error('Налаштування EmailJS відсутні.');
-      }
+      // if (!serviceID || !templateID || !publicKey) {
+      //   throw new Error('Налаштування EmailJS відсутні.');
+      // }
 
-      await emailjs.send(
-        serviceID,
-        templateID,
-        {
-          from_name: `${data.firstName} ${data.lastName}`,
-          from_email: data.email,
-          reply_to: data.email,
-          ...data,
-        },
-        publicKey
-      );
+      // await emailjs.send(
+      //   serviceID,
+      //   templateID,
+      //   {
+      //     from_name: `${data.firstName} ${data.lastName}`,
+      //     from_email: data.email,
+      //     reply_to: data.email,
+      //     ...data,
+      //   },
+      //   publicKey
+      // );
 
       toast.success('The message was sent successfully!');
       evt.target.reset();
