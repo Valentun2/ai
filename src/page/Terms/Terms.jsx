@@ -10,14 +10,18 @@ const Terms = () => {
         <h3 className="font-semibold  text-[24px] sm:text-[32px] lg:text-[64px] text-white">
           Terms of Service
         </h3>
-        <p className="text-[16px] mt-8">Last Updated: [Date]</p>
+        <p className="text-[16px] mt-8">Date of Revision: [ 02/10/2024 ]</p>
         <p className="text-[16px] mt-8">
-          Welcome to worldtools.ai. By accessing or using our services, you
-          agree to be bound by these Terms of Service (the “Terms”). These Terms
-          apply to all users of the site, including without limitation users who
-          are browsers, customers, and others. Please read these Terms carefully
-          before using our platform.
+          These Terms and Conditions ("Terms") govern your use of the
+          worldtools.ai website (the "Site"), operated by Ineffaceable
+          Enterprises, address &nbsp;
+          <span data-nosnippet>
+            3960 Howard Hughes Parkway, Suite 500, Las Vegas, Nevada, 89169
+          </span>
+          . By using our Site, you agree to be bound by these Terms. If you do
+          not agree, you may not use our Site.
         </p>
+
         <ul className="flex flex-col mt-8 gap-8">
           <li>
             <h5 className="font-semibold text-white text-[24px] lg:text-[32px] ">
@@ -200,9 +204,10 @@ const Terms = () => {
             </h5>
             <p className="text-[16px] mt-4">
               These Terms are governed by and construed in accordance with the
-              laws of [Your Jurisdiction], without regard to its conflict of
-              laws principles. Any legal action arising out of these Terms shall
-              be brought in the courts located in [Jurisdiction].
+              laws of United States, without regard to its conflict of laws
+              principles. Any legal action arising out of these Terms shall be
+              brought in the courts located in
+              <span data-nosnippet>Las Vegas, Nevada</span>.
             </p>
           </li>
           <li>
@@ -221,7 +226,10 @@ const Terms = () => {
             </h5>
             <p className="text-[16px] mt-4">
               If you have any questions about these Terms, please contact us at
-              3960 Howard Hughes Parkway, Suite 500, Las Vegas, Nevada, 89169.
+              &nbsp;
+              <a href="mailto:support@worldtools.ai" className="text-[#0066FF]">
+                support@worldtools.ai
+              </a>
             </p>
           </li>
         </ul>

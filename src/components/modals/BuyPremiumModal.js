@@ -10,13 +10,21 @@ const BuyPremiumModal = ({ setOpenBuyPremium }) => {
     <div className="z-10 overflow-auto  w-[100%] h-screen fixed top-10 left-0  bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center ">
       <div className=" overflow-auto max-h-[calc(100vh-150px)] w-[358px]  md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl relative scrollbar-none">
         <button
-          onClick={() => setOpenBuyPremium(false)}
-          className="cursor-pointer absolute right-0 top-0 md:right-3 md:top-3 bg-transparent"
+          onClick={() => {
+            setOpenBuyPremium(false);
+            const scrollPosition =
+              parseInt(document.body.style.top || '0', 10) * -1;
+
+            document.body.classList.remove('overflow-hidden-body');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+          }}
+          className="cursor-pointer absolute right-0 top-0 w-6 h-6 md:right-3 md:top-3 bg-transparent hover:scale-[1.15]  transition-all duration-300 ease-in-out"
         >
           <svg
             width={24}
             height={24}
-            className="flex p-2 justify-center items-center w-8 h-8  rounded-[6px] pointer-events-none"
+            className="flex p-2 fill-white  justify-center items-center w-8 h-8  rounded-[6px] pointer-events-none"
           >
             <use
               width={14}
@@ -106,7 +114,7 @@ const BuyPremiumModal = ({ setOpenBuyPremium }) => {
           and acknowledge that all sales are final. Subscription renewals will
           be billed automatically unless canceled before the next billing cycle.
         </p>
-        <button className="cursor-pointer bg-[#0099FF] text-black rounded-xl w-[100%] py-3 text-center mt-4">
+        <button className="cursor-pointer bg-gradient-to-b from-[#0099FF] to-[#0066FF]  transition-all duration-300 hover:from-[#4BB7FF] hover:to-[#287EFF] text-black rounded-xl w-[100%] py-3 text-center mt-4">
           {` Continue`}
         </button>
       </div>

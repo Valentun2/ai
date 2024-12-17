@@ -4,56 +4,55 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
-  // const [isSubscription, setIsSubscription] = useState('');
   const navigate = useNavigate();
 
   const handleClick = () => {
+    const scrollPosition = parseInt(document.body.style.top || '0', 10) * -1;
+
+    document.body.classList.remove('overflow-hidden-body');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
+
     setVisible(false);
   };
 
   const handleClickStartChat = async e => {
     try {
-      // Викликаємо функцію для отримання поточного користувача
       const userData = await currentUser();
-      console.log(userData);
-      // Перевіряємо, чи є властивість subscription
       if (!userData || !userData.subscription) {
         console.error("Invalid user data or missing 'subscription'");
         return;
       }
 
-      console.log(userData); // Лог для налагодження
-
-      // Зберігаємо статус підписки в state
-      // setIsSubscription(userData.subscription);
-
-      // Перевіряємо статус підписки
       if (userData.subscription !== 'none') {
-        navigate('/chat'); // Перенаправлення
+        navigate('/chat');
       } else {
         setVisible(false);
         setOpenBuyPremium(true);
       }
     } catch (err) {
       setVisible(false);
-      // console.log(eventEmitter.emit('start'));
       eventEmitter2.emit('start');
-      console.error('Error fetching user data:', err); // Лог помилок
+      const scrollPosition = parseInt(document.body.style.top || '0', 10) * -1;
+
+      document.body.classList.remove('overflow-hidden-body');
+      document.body.style.top = '';
+      window.scrollTo(0, scrollPosition);
       toast('You need to log in!');
     }
   };
 
   return (
-    <div className="z-[10] top-[82px] w-[100%] h-screen  fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center overflow-auto">
-      <div className=" overflow-auto top-[15px] z-10 relative sm:w-[358px] md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl max-h-[calc(100vh-150px)]">
+    <div className="z-[10]  w-[100%] h-[100vh]  fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex justify-center items-center overflow-auto scrollbar-none">
+      <div className=" overflow-auto  z-10 relative sm:w-[358px] md:w-[600px] border border-modalBorder bg-cardsTransparent p-6 rounded-xl h-[70vh] scrollbar-none">
         <button
           onClick={handleClick}
-          className="cursor-pointer absolute right-[16px] top-4 bg-transparent"
+          className="cursor-pointer absolute right-[16px] top-4 bg-transparent hover:scale-[1.15]  transition-all duration-300 ease-in-out"
         >
           <svg
             width={24}
             height={24}
-            className="flex p-2 justify-center items-center w-8 h-8  rounded-[6px] pointer-events-none"
+            className="flex p-2 justify-center items-center w-8 h-8  rounded-[6px] pointer-events-none fill-white"
           >
             <use
               width={14}
@@ -71,16 +70,55 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
         </div>
         <ul className="flex  justify-around mt-4">
           <li className=" flex flex-col items-center">
-            <p className="font-semibold text-[20px] ">4.4</p>
+            <div className="flex gap-1 items-center">
+              <svg
+                width={24}
+                height={24}
+                className="flex  justify-center items-center w-[24px] h-[24px]  rounded-[6px]"
+              >
+                <use
+                  width={24}
+                  height={24}
+                  href="./image/icons.svg#icon-solar_star-shine"
+                ></use>
+              </svg>
+              <p className="font-semibold text-[20px] ">4.4</p>
+            </div>
             <p className="text-[14px] text-pricingText">Average Rating</p>
           </li>
 
           <li className=" flex flex-col items-center">
-            <p className="font-semibold text-[20px] ">743</p>
+            <div className="flex gap-1 items-center">
+              <svg
+                width={18}
+                height={18}
+                className="flex  justify-center items-center w-[18px] h-[18px] rounded-[6px]"
+              >
+                <use
+                  width={18}
+                  height={18}
+                  href="./image/icons.svg#icon-ph_eye-fill"
+                ></use>
+              </svg>
+              <p className="font-semibold text-[20px] ">743</p>
+            </div>
             <p className="text-[14px] text-pricingText">Views</p>
           </li>
           <li className=" flex flex-col items-center">
-            <p className="font-semibold text-[20px] ">371</p>
+            <div className="flex gap-1 items-center">
+              <svg
+                width={20}
+                height={20}
+                className="flex  justify-center items-center w-[20px] h-[20px]  rounded-[6px]"
+              >
+                <use
+                  width={20}
+                  height={20}
+                  href="./image/icons.svg#icon-mage_users"
+                ></use>
+              </svg>
+              <p className="font-semibold text-[20px] ">371</p>
+            </div>
             <p className="text-[14px] text-pricingText">Monthly Uses</p>
           </li>
         </ul>
@@ -91,7 +129,7 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
               <svg
                 width={18}
                 height={18}
-                className="flex  justify-center items-center w-[18px] h-[18px] bg-input rounded-[6px]"
+                className="flex  justify-center items-center w-[18px] h-[18px]  rounded-[6px]"
               >
                 <use
                   width={18}
@@ -110,7 +148,7 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
               <svg
                 width={18}
                 height={18}
-                className="flex  justify-center items-center w-[18px] h-[18px] bg-input rounded-[6px]"
+                className="flex  justify-center items-center w-[18px] h-[18px]  rounded-[6px]"
               >
                 <use
                   width={18}
@@ -131,7 +169,7 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
               <svg
                 width={18}
                 height={18}
-                className="flex  justify-center items-center w-[18px] h-[18px] bg-input rounded-[6px]"
+                className="flex  justify-center items-center w-[18px] h-[18px]  rounded-[6px]"
               >
                 <use
                   width={18}
@@ -151,7 +189,7 @@ const ModalAI = ({ data, setVisible, setOpenBuyPremium }) => {
         </div>
         <button
           onClick={handleClickStartChat}
-          className="bg-white text-black rounded-xl w-[100%] py-3 text-center mt-4"
+          className="bg-white text-black rounded-xl w-[100%] py-3 text-center mt-4 hover:bg-[#CECECE] transition-all duration-300 ease-in-out"
         >
           Start Chat
         </button>

@@ -1,6 +1,6 @@
 const AnnualPlan = () => {
   return (
-    <li className="w-full md:w-[363px] bg-input rounded-[32px]  py-10 px-10  backdrop-blur-lg hover:bg-bgCards transition-all duration-500 ">
+    <li className=" sm:min-w-[363px] md:w-[363px] border border-transparent bg-input rounded-[32px]  py-6 px-6  lg:py-10 lg:px-10 backdrop-blur-lg hover:bg-bgCards hover:border-cardsText transition-all duration-500 ">
       <h4 className="font-semibold text-[24px]">Annual Plan</h4>
       <p className="text-[16px] text-cardsBorder mt-1">
         Loyal users who demand the best value for money{' '}
@@ -17,7 +17,7 @@ const AnnualPlan = () => {
         </p>
       </div>
 
-      <button className="py-3 text-center w-full mt-[75px] bg-gradient-to-b from-[#0099FF] to-[#0066FF]  rounded-xl">
+      <button className="py-3 after:pointer-events-none text-center w-full mt-6 lg:mt-10 bg-gradient-to-b from-[#0099FF] to-[#0066FF]  rounded-xl relative after:block after:absolute after:bottom-[-40px] after:w-full after:h-[1px] after:bg-inputTransparent after:mt-2 after:mx-auto transition-all duration-300 hover:from-[#4BB7FF] hover:to-[#287EFF]">
         Get Started
       </button>
       <h5 className="text-[18px] font-medium mt-20">What you will get</h5>

@@ -11,10 +11,37 @@ const Footer = () => {
     <footer className="py-16">
       <div className="container md:flex justify-between">
         <div className="flex flex-col justify-center md:justify-start  items-center  md:items-start gap-4">
-          <a href="/" className=" text-[17px] font-bold">
-            getmyhelp.ai
-          </a>
-          <p className="">All rights reserved. © 2024 getmyhelp.ai</p>
+          <div className="flex items-center gap-1">
+            <svg
+              width={24}
+              height={24}
+              className="flex justify-center items-center w-6 h-6 bg-input rounded-[6px]"
+            >
+              <use
+                width={24}
+                height={24}
+                href="./image/icons.svg#icon-logo"
+              ></use>
+            </svg>
+            <Link
+              // onClick={() => setIsOpen(false)}
+              to="/"
+              className="text-[17px] font-bold"
+            >
+              worldtools.ai
+            </Link>
+          </div>
+          <div>
+            <p className="w-[300px] text-center text-cardsText md:text-left xl:w-auto">
+              <span data-nosnippet>
+                {' '}
+                Ineffaceable Enterprises, Las Vegas Nevada, 89169
+              </span>
+            </p>
+            <p className="w-[300px] text-center text-cardsText md:text-left xl:w-auto">
+              All rights reserved. © 2024 worldtools.ai
+            </p>
+          </div>
         </div>
         <div className="flex justify-around max-md:justify-between gap-[16px] lg:gap-[64px] mt-8 md:m-0">
           <div>
@@ -35,28 +62,31 @@ const Footer = () => {
             <ul className="flex flex-col mt-2 text-[17px] text-cardsText gap-2">
               <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
-                <Link to="#productivity">Productivity AI</Link>
+                <Link to="/#productivity">Productivity AI</Link>
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
-                <Link to="#tech">Tech AI</Link>
+                <Link to="/#tech">Tech AI</Link>
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
-                <Link to="#Finance">Finance AI</Link>
+                <Link to="/#finance">Finance AI</Link>
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
-                <Link to="#education hover:text-border transition-all duration-500">
+                <Link
+                  to="/#education"
+                  className=" hover:text-border transition-all duration-500"
+                >
                   Education AI
                 </Link>
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
                 {' '}
-                <Link to="#analytics">Analytics AI</Link>
+                <Link to="/#analytics">Analytics AI</Link>
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
-                <Link to="#marketing">Marketing AI</Link>
+                <Link to="/#marketing">Marketing AI</Link>
               </li>
             </ul>
           </div>
@@ -67,7 +97,7 @@ const Footer = () => {
                 <Link to={'terms'}>Terms</Link>{' '}
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
-                Cookies
+                <Link to={'cookies'}>Cookies</Link>
               </li>
               <li className="cursor-pointer hover:text-border transition-all duration-500">
                 <Link to={'policy'}>Policy</Link>

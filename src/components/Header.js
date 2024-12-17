@@ -18,13 +18,11 @@ export const setBearerToken = token => {
 
 setBearerToken(localStorage.getItem('token'));
 const Header = () => {
-  const { openModal, closeModal, isModalOpen } = useModal();
+  const { openModal, closeModal, isModalOpen, isOpening } = useModal();
 
   const [userData, setUserData] = useState({});
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenSignIn, setIsOpenSignIn] = useState(false);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
   const [openCategories, setOpenCategories] = useState(false);
 
@@ -42,19 +40,18 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const fetchCurrentUserData = async () => {
-      try {
-        const data = await currentUser();
-        setUserData({ ...data });
-        console.log(data);
-      } catch (error) {
-        console.log('Error fetching user data:', error);
-      }
-    };
-
-    fetchCurrentUserData();
-  }, []);
+  const clickProfile = async () => {
+    if (userData?.firstName) {
+      return;
+    }
+    try {
+      const data = await currentUser();
+      setUserData({ ...data });
+      console.log(data);
+    } catch (error) {
+      console.log('Error fetching user data:', error);
+    }
+  };
 
   const handleClick = e => {
     setIsOpen(!isOpen);
@@ -67,19 +64,13 @@ const Header = () => {
     setOpenProfile(false);
   };
 
-  const handleOpenAuthModal = e => {
-    console.log(isOpenSignIn);
-    if (isOpenSignIn) {
-      setIsOpenSignIn(false);
-    }
-    setIsAuthModalOpen(!isAuthModalOpen);
-  };
-
   const handleOpenProfile = () => {
+    if (!document.body.classList.contains('overflow-hidden-body')) {
+      document.body.classList.add('overflow-hidden-body');
+    }
+
     setOpenProfile(!openProfile);
   };
-
-  // ================
 
   useEffect(() => {
     const handleStart = () => {
@@ -93,21 +84,15 @@ const Header = () => {
     };
   }, [openModal]);
 
-  useEffect(() => {
-    eventEmitter2.on('profile', () => {
-      console.log('profile');
-      setIsOpenProfile(true);
-    });
-  }, []);
   return (
     <header
-      className={`  sticky top-0     z-50  ${
-        isOpen || openProfile || isAuthModalOpen || isOpenSignIn
-          ? 'bg-blackTransparent'
-          : ''
-      } ${isScrolled ? 'bg-blackTransparent' : ''}`}
+      className={` sticky-element sticky top-0     z-50 ${
+        isOpening || isOpen ? 'bg-blackTransparent' : ''
+      }  ${isScrolled ? 'bg-blackTransparent' : ''} `}
     >
-      <div className=" pt-[28px] pb-[28px] flex justify-between items-center   pl-6 pr-6 bg-opacity-80 backdrop-blur-lg">
+      <div
+        className={` pt-[16px] pb-[16px] flex justify-between items-center   pl-6 pr-6 bg-opacity-80 backdrop-blur-lg`}
+      >
         <div className="flex items-center gap-1">
           <svg
             width={24}
@@ -125,7 +110,7 @@ const Header = () => {
             to="/"
             className="text-[17px] font-bold"
           >
-            getmyhelp.ai
+            worldtools.ai
           </Link>
         </div>
         <ul className="hidden md:flex text-whiteTransparent text-[14px] gap-4">
@@ -135,7 +120,7 @@ const Header = () => {
               onMouseEnter={() => setOpenCategories(true)}
               onMouseLeave={() => setOpenCategories(false)}
             >
-              <p>AI Categories</p>
+              <p className="hover:text-white cursor-pointer">AI Categories</p>
               <svg
                 width={16}
                 height={12}
@@ -160,63 +145,127 @@ const Header = () => {
               }
             }}
             to={`${token ? '/chat' : ''}`}
+            className="hover:text-white cursor-pointer"
           >
             Chat
           </Link>
-          <Link to="pricing">Pricing</Link>
+          <Link to="pricing" className="hover:text-white cursor-pointer">
+            Pricing
+          </Link>
         </ul>
         {token ? (
           <div
-            onMouseEnter={() => setIsOpenProfile(true)}
-            onMouseLeave={() => setIsOpenProfile(false)}
+            // onMouseEnter={() => setIsOpenProfile(true)}
+            // onMouseLeave={() => setIsOpenProfile(false)}
             className="hidden md:flex gap-1 flex-col relative"
           >
             <div className="hidden md:flex gap-1 items-center">
-              <img className="w-4" alt="avt" src="./image/icon-people.png" />
-              <p className=" cursor-pointer">Profile</p>
-              <svg
-                width={16}
-                height={12}
-                className="flex justify-center items-center rounded-[6px]"
+              <div className="bg-input p-3 rounded-2xl">
+                {' '}
+                <img className="w-6" alt="avt" src="./image/icon-people.png" />
+              </div>
+              <div
+                className="flex items-center gap-1"
+                onClick={() => {
+                  setIsOpenProfile(!isOpenProfile);
+                  clickProfile();
+                }}
               >
-                <use
-                  width={12}
+                <p
+                  className=" cursor-pointer pointer-events-none "
+                  // onClick={clickProfile}
+                >
+                  Profile
+                </p>
+                <svg
+                  width={16}
                   height={12}
-                  href="./image/icons.svg#icon-Arrow"
-                ></use>
-              </svg>
-            </div>
-            <div
-              className={`absolute top-full z-50 transform transition-all duration-300 ease-in-out ${
-                isOpenProfile
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 -translate-y-2 pointer-events-none'
-              }`}
-            >
-              <p className=" cursor-pointer" onClick={handleOpenProfile}>
-                Settings
-              </p>
-              <p className=" cursor-pointer" onClick={logoutUser}>
-                Log out
-              </p>
+                  className="flex justify-center items-center  rounded-[6px] pointer-events-none"
+                >
+                  <use
+                    width={12}
+                    height={12}
+                    href="./image/icons.svg#icon-Arrow"
+                  ></use>
+                </svg>
+              </div>
+
+              <div
+                className={`absolute top-[130%] right-[-12px] z-[50] transform transition-all duration-300 ease-in-out w-[159px] rounded-2xl bg-profileWindow py-6 justify-center items-center flex flex-col gap-4 border border-modalBorder border-t-transparent  ${
+                  isOpenProfile
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 -translate-y-2 pointer-events-none'
+                }`}
+              >
+                <div className="flex gap-[6px]">
+                  <svg
+                    width={24}
+                    height={24}
+                    className="flex justify-center items-center w-6 h-6 bg-input rounded-[6px]"
+                  >
+                    <use
+                      width={24}
+                      height={24}
+                      href="./image/icons.svg#icon-settings-bold"
+                    ></use>
+                  </svg>
+                  <p
+                    className=" cursor-pointer"
+                    onClick={() => {
+                      handleOpenProfile();
+                      setIsOpenProfile(false);
+                    }}
+                  >
+                    Settings
+                  </p>
+                </div>
+                <div className="flex gap-[6px]">
+                  <div>
+                    {' '}
+                    <svg
+                      width={24}
+                      height={24}
+                      className="flex justify-center items-center w-6 h-6 bg-input rounded-[6px]"
+                    >
+                      <use
+                        width={24}
+                        height={24}
+                        href="./image/icons.svg#icon-logout"
+                      ></use>
+                    </svg>
+                  </div>
+                  <p
+                    className=" cursor-pointer text-[#FF3D00]"
+                    onClick={logoutUser}
+                  >
+                    Log out
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         ) : (
           <ul className="hidden md:flex gap-4 text-[16px] items-center">
             <li>
               <button
-                onClick={() => openModal('loginModal')}
-                className="text-[16px]"
+                onClick={() => {
+                  openModal('loginModal');
+                  document.body.classList.add('overflow-hidden-body');
+                }}
+                className="text-[16px] hover:text-[#CECECE] transition-all duration-300 ease-in-out"
               >
-                Sing In
+                Sign In
               </button>
             </li>
             <li>
               <button
-                onClick={() => openModal('authModal')}
-                className="text-[16px] bg-white text-black rounded-xl py-3 px-4 font-medium"
+                onClick={() => {
+                  openModal('authModal');
+                  document.body.classList.add('overflow-hidden-body');
+                }}
+                className="text-[16px] bg-white text-black rounded-xl py-3 px-4 font-medium hover:bg-[#CECECE] transition-all duration-300 ease-in-out"
               >
-                Sing Up
+                Sign Up
               </button>
             </li>
           </ul>
@@ -225,7 +274,7 @@ const Header = () => {
           <svg
             width={24}
             height={24}
-            className="flex  justify-center items-center  bg-input rounded-[6px]"
+            className="flex  justify-center items-center   rounded-[6px]"
           >
             <use
               width={24}
@@ -240,24 +289,98 @@ const Header = () => {
         setIsOpen={setIsOpen}
         isOpen={isOpen}
         setToken={setToken}
-        // isOpen={isOpenSignIn}
-        handleModal={handleOpenAuthModal}
-        setIsOpenSignIn={setIsOpenSignIn}
+        isOpenProfile={isOpenProfile}
       >
-        {' '}
         {token ? (
-          <p className="pt-4" onClick={logoutUser}>
-            Log out
-          </p>
+          <div className="mt-4 relative">
+            <div
+              className="flex items-center gap-1 "
+              onClick={() => {
+                setIsOpenProfile(!isOpenProfile);
+                clickProfile();
+              }}
+            >
+              <p
+                className=" cursor-pointer pointer-events-none"
+                // onClick={clickProfile}
+              >
+                Profile
+              </p>
+              <svg
+                width={16}
+                height={12}
+                className="flex justify-center items-center  rounded-[6px] pointer-events-none"
+              >
+                <use
+                  width={12}
+                  height={12}
+                  href="./image/icons.svg#icon-Arrow"
+                ></use>
+              </svg>
+            </div>
+            <div
+              className={`absolute top-10 left-0 z-[50] transform transition-all duration-300 ease-in-out w-[159px] rounded-2xl  justify-center flex flex-col gap-4  ${
+                isOpenProfile
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 -translate-y-2 pointer-events-none'
+              }`}
+            >
+              <div className="flex gap-[6px]">
+                <svg
+                  width={24}
+                  height={24}
+                  className="flex justify-center items-center w-6 h-6 bg-input rounded-[6px]"
+                >
+                  <use
+                    width={24}
+                    height={24}
+                    href="./image/icons.svg#icon-settings-bold"
+                  ></use>
+                </svg>
+                <p
+                  className=" cursor-pointer"
+                  onClick={() => {
+                    handleOpenProfile();
+                    setIsOpen(false);
+                  }}
+                >
+                  Settings
+                </p>
+              </div>
+              <div className="flex gap-[6px] ">
+                <div>
+                  {' '}
+                  <svg
+                    width={24}
+                    height={24}
+                    className="flex justify-center items-center w-6 h-6 bg-input rounded-[6px]"
+                  >
+                    <use
+                      width={24}
+                      height={24}
+                      href="./image/icons.svg#icon-logout"
+                    ></use>
+                  </svg>
+                </div>
+                <p
+                  className="text-[16px] cursor-pointer text-[#FF3D00]"
+                  onClick={logoutUser}
+                >
+                  Log out
+                </p>
+              </div>
+            </div>
+          </div>
         ) : (
-          <ul className="mt-4 flex gap-4 text-[16px]">
+          <ul className="mt-4 flex gap-4 text-[16px] items-center justify-between">
             <li>
               <button
                 onClick={() => {
                   openModal('loginModal');
                   setIsOpen(false);
+                  document.body.classList.add('overflow-hidden-body');
                 }}
-                className="text-[16px]"
+                className="text-[16px] w-[120px]  sm:w-[163px]"
               >
                 Sing In
               </button>
@@ -267,8 +390,9 @@ const Header = () => {
                 onClick={() => {
                   openModal('authModal');
                   setIsOpen(false);
+                  document.body.classList.add('overflow-hidden-body');
                 }}
-                className="text-[16px]"
+                className="text-[16px] w-[120px]  sm:w-[163px] hover:bg-[#CECECE] transition-all duration-300 ease-in-out bg-white text-black rounded-xl py-3 font-medium"
               >
                 Sing Up
               </button>
@@ -278,12 +402,8 @@ const Header = () => {
       </MobileMenu>
       {isModalOpen('loginModal') && (
         <SignIn
-          // handleSubmit={onSubmit}
-          // token={handleToken}
           setToken={setToken}
           openModal={openModal}
-          handleModal={handleOpenAuthModal}
-          setIsOpenSignIn={setIsOpenSignIn}
           closeModal={closeModal}
           setUserData={setUserData}
         />
@@ -292,7 +412,6 @@ const Header = () => {
         <AuthModal
           setUserData={setUserData}
           closeModal={closeModal}
-          isOpen={isAuthModalOpen}
           openModal={openModal}
           setToken={setToken}
         />

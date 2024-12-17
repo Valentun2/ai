@@ -3,6 +3,7 @@ import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import ScrollToHash from 'helpers/Scroll';
+import { openModal } from './AnalyticsBlock';
 
 const FinanceBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -24,6 +25,7 @@ const FinanceBlock = ({ arr }) => {
       view,
     });
     setVisible(true);
+    openModal();
   };
   return (
     <div className="relative" id="finance">
@@ -37,8 +39,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Monitor expenses effortlessly. Expense Tracker categorizes
-          transactions, helping you maintain a clear financial picture.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Monitor expenses effortlessly. Expense Tracker categorizes
+            transactions, helping you maintain a clear financial picture.
+          </p>
         </Card>
         <Card
           title={'Investment Analyzer'}
@@ -47,8 +51,11 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Make informed investment decisions with detailed insights. Investment
-          Analyzer reviews performance and risk factors for smarter choices.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Make informed investment decisions with detailed insights.
+            Investment Analyzer reviews performance and risk factors for smarter
+            choices.
+          </p>
         </Card>
         <Card
           title={'Tax Calculator'}
@@ -57,8 +64,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Take the stress out of tax season. Tax Calculator helps estimate
-          taxes, find deductions, and simplify filing."
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Take the stress out of tax season. Tax Calculator helps estimate
+            taxes, find deductions, and simplify filing."
+          </p>
         </Card>
         <Card
           title={'Budget Planner'}
@@ -67,8 +76,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Plan and manage your budget effectively. Budget Planner categorizes
-          spending and helps you stay on track financially.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Plan and manage your budget effectively. Budget Planner categorizes
+            spending and helps you stay on track financially.
+          </p>
         </Card>
         <Card
           title={'Loan Calculator'}
@@ -77,8 +88,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Get a clear view of loan terms. Loan Calculator provides accurate
-          estimates for monthly payments and interest.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Get a clear view of loan terms. Loan Calculator provides accurate
+            estimates for monthly payments and interest.
+          </p>
         </Card>
         <Card
           title={'Credit Score Tracker'}
@@ -87,8 +100,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Keep tabs on your credit health. Credit Score Tracker monitors changes
-          and provides tips to improve your score.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Keep tabs on your credit health. Credit Score Tracker monitors
+            changes and provides tips to improve your score.
+          </p>
         </Card>
         <Card
           title={'Portfolio Rebalancer'}
@@ -97,8 +112,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Optimize your investment portfolio. Portfolio Rebalancer analyzes
-          asset allocation and suggests adjustments for stability and growth.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Optimize your investment portfolio. Portfolio Rebalancer analyzes
+            asset allocation and suggests adjustments for stability and growth.
+          </p>
         </Card>
         <Card
           title={'Retirement Planner'}
@@ -107,8 +124,10 @@ const FinanceBlock = ({ arr }) => {
           tag={'Finance'}
           arr={arr}
         >
-          Prepare for the future with confidence. Retirement Planner helps
-          calculate savings goals and timelines for a secure retirement.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Prepare for the future with confidence. Retirement Planner helps
+            calculate savings goals and timelines for a secure retirement.
+          </p>
         </Card>
       </ul>
       {visible && (

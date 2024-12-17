@@ -4,6 +4,7 @@ import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 // import { useLocation } from 'react-router-dom';
 import ScrollToHash from 'helpers/Scroll';
+import { openModal } from './AnalyticsBlock';
 
 const ProductivityBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -25,6 +26,7 @@ const ProductivityBlock = ({ arr }) => {
       view,
     });
     setVisible(true);
+    openModal();
   };
   return (
     <div id="productivity" className="relative">
@@ -37,9 +39,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/AI-Bookkeeper-logo.png'}
           tag={'Productivity'}
         >
-          Effortlessly organize your finances with AI-driven bookkeeping. Track
-          expenses, manage invoices, and simplify reporting—so you can focus on
-          growing your business.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Effortlessly organize your finances with AI-driven bookkeeping.
+            Track expenses, manage invoices, and simplify reporting—so you can
+            focus on growing your business.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -48,9 +52,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/ExcelAssistant.png'}
           tag={'Productivity'}
         >
-          Transform your data work with AI. From automating calculations to
-          creating complex formulas, Excel Assistant streamlines your
-          spreadsheet tasks and saves valuable time.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Transform your data work with AI. From automating calculations to
+            creating complex formulas, Excel Assistant streamlines your
+            spreadsheet tasks and saves valuable time.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -59,9 +65,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/PromptGenerator.png'}
           tag={'Productivity'}
         >
-          Transform your data work with AI. From automating calculations to
-          creating complex formulas, Excel Assistant streamlines your
-          spreadsheet tasks and saves valuable time.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Transform your data work with AI. From automating calculations to
+            creating complex formulas, Excel Assistant streamlines your
+            spreadsheet tasks and saves valuable time.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -70,9 +78,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/EmailComposer.png'}
           tag={'Productivity'}
         >
-          Write professional emails faster than ever. Email Composer crafts
-          concise and effective messages, handling everything from introductions
-          to follow-ups with AI-powered.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Write professional emails faster than ever. Email Composer crafts
+            concise and effective messages, handling everything from
+            introductions to follow-ups with AI-powered.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -81,9 +91,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/ScheduleOptimizer.png'}
           tag={'Productivity'}
         >
-          Take control of your time with smart scheduling. Schedule Optimizer
-          adjusts appointments and priorities for maximum productivity,
-          balancing efficiency with your work-life needs.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Take control of your time with smart scheduling. Schedule Optimizer
+            adjusts appointments and priorities for maximum productivity,
+            balancing efficiency with your work-life needs.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -92,9 +104,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/ContentOutliner.png'}
           tag={'Productivity'}
         >
-          Boost your writing productivity by structuring ideas with Content
-          Outliner. From blogs to reports, this AI helps you create clear,
-          organized outlines tailored to your audience.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Boost your writing productivity by structuring ideas with Content
+            Outliner. From blogs to reports, this AI helps you create clear,
+            organized outlines tailored to your audience.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -103,9 +117,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/TaskPrioritizer.png'}
           tag={'Productivity'}
         >
-          Stay on top of your to-do list with intelligent prioritization. Task
-          Prioritizer organizes tasks by importance and deadline, helping you
-          tackle the most critical items first.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Stay on top of your to-do list with intelligent prioritization. Task
+            Prioritizer organizes tasks by importance and deadline, helping you
+            tackle the most critical items first.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -114,9 +130,11 @@ const ProductivityBlock = ({ arr }) => {
           img={'./image/DocumentSummarizer.png'}
           tag={'Productivity'}
         >
-          Speed up your reading with AI-generated summaries. Document Summarizer
-          condenses lengthy texts, reports, and articles into key points, so you
-          can focus on what matters.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Speed up your reading with AI-generated summaries. Document
+            Summarizer condenses lengthy texts, reports, and articles into key
+            points, so you can focus on what matters.
+          </p>
         </Card>
       </ul>
       {visible && (

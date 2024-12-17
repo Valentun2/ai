@@ -3,18 +3,28 @@ import { useState } from 'react';
 // Кастомний хук для управління модалками
 const useModal = () => {
   const [activeModal, setActiveModal] = useState(null);
-
+  const [isOpening, setIsOpening] = useState(false);
   const openModal = modalName => {
-    setActiveModal(modalName); // Встановити активну модалку
+    setIsOpening(true);
+
+    setActiveModal(modalName);
   };
 
   const closeModal = () => {
-    setActiveModal(null); // Закрити всі модалки
+    setActiveModal(null);
+    setIsOpening(false);
+    document.body.classList.remove('overflow-hidden-body');
   };
 
-  const isModalOpen = modalName => activeModal === modalName;
+  const isModalOpen = modalName => {
+    if (activeModal === modalName) {
+      document.body.classList.add('overflow-hidden-body');
+    }
 
-  return { openModal, closeModal, isModalOpen };
+    return activeModal === modalName;
+  };
+
+  return { openModal, closeModal, isModalOpen, isOpening };
 };
 
 export default useModal;

@@ -1,28 +1,30 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const MobileMenu = ({ isOpen, setIsOpen, children }) => {
+const MobileMenu = ({ isOpen, setIsOpen, isOpenProfile, children }) => {
   const [isVisible, setIsVisible] = useState(false);
-  // const { openModal, closeModal, isModalOpen } = useModal();
-  // console.log(isModalOpen);
+
   const handleClick = e => {
     setIsVisible(!isVisible);
   };
 
-  // const handleCliclSingIn = () => {
-  //   props.setIsOpenSignIn(true);
-  //   props.setIsOpen(false);
-  // };
-
   return (
     <div
-      className={`z-50 fixed  bg-black overflow-y-auto  ${
-        isVisible ? 'h-[556px]' : 'h-[216px]'
-      }  bg-opacity-50 backdrop-blur-2xl  w-full p-6 transition-all duration-500  ${
+      className={`z-50 fixed  bg-black overflow-y-auto pb-6 ${
+        isVisible ? 'h-[556px]' : 'h-[200px]'
+      } 
+        ${
+          isOpenProfile && isVisible
+            ? 'h-[600px]'
+            : isOpenProfile
+            ? 'h-[270px]'
+            : ''
+        } 
+      bg-opacity-50 backdrop-blur-2xl  w-full p-6 transition-all duration-500  ${
         !isOpen ? '-translate-x-full' : 'translate-x-0'
       }`}
     >
-      <div className="absolute flex flex-col text-whiteTransparent text-[16px] h-[110%] ">
+      <div className="absolute flex flex-col text-whiteTransparent text-[16px]  sm:max-w-[390px] ">
         <div className="flex gap-4 flex-col">
           <div className="flex  items-center gap-1 " onClick={handleClick}>
             <p>AI Categories</p>

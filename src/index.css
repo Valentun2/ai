@@ -1,22 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
+  width: 100vw;
+  overflow-x: hidden;
+
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
 @layer components {
   .custom-div:before {
     content: '';
     position: absolute;
-    /* width: 300px;
-    height: 400px; */
+
     left: -25px;
     top: -25px;
     right: 0;
@@ -49,6 +52,20 @@ body {
   }
 
   .isActive .custom-after::after {
-    right: 0; /* Застосовується, якщо елемент із класом isActive є батьківським для custom-after */
+    right: 0;
   }
+}
+
+.overflow-hidden-body {
+  position: fixed;
+  /* width: 100%; */
+  overflow-y: scroll;
+}
+
+.gradient-overlay {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.07),
+    rgba(240, 68, 56, 0.07)
+  );
 }

@@ -19,11 +19,11 @@ export const validationAuthSchema = Yup.object({
   firstName: Yup.string()
     .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
     .min(3, 'Too short')
-    .required('Name is required'),
+    .required('First name is required'),
   lastName: Yup.string()
     .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
     .min(3, 'Too short')
-    .required('Name is required'),
+    .required('Last name is required'),
 });
 
 export const validationUpdateSchema = Yup.object({
@@ -32,16 +32,44 @@ export const validationUpdateSchema = Yup.object({
     .required('Email is required'),
   newPassword: Yup.string()
     .min(8, 'Password must be at least 8 characters')
-    .required('Password is required'),
+    .required('New password is required'),
   oldPassword: Yup.string()
     .min(8, 'Password must be at least 8 characters')
-    .required('Password is required'),
+    .required('Old password is required'),
   firstName: Yup.string()
     .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
     .min(3, 'Too short')
-    .required('Name is required'),
+    .required('First name is required'),
   lastName: Yup.string()
     .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
     .min(3, 'Too short')
-    .required('Name is required'),
+    .required('Last name is required'),
+});
+
+export const validationSupportSchema = Yup.object({
+  email: Yup.string()
+    .email('Email is invalid. Try again!')
+    .required('Email is required'),
+
+  firstName: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
+    .min(3, 'Too short')
+    .required('First name is required'),
+  lastName: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
+    .min(3, 'Too short')
+    .required('Last name is required'),
+  country: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
+    .required('Country is required'),
+  jobTitle: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
+    .required('Job Title is required'),
+  company: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
+    .required('Company is required'),
+  text: Yup.string()
+    .matches(/^[A-Za-zА-Яа-яЁёІіЇїЄєҐґ\s]+$/, 'Only letters are allowed')
+    .required('Message is required')
+    .min(10, 'Too short'),
 });

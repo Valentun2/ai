@@ -9,7 +9,7 @@ const PricingPage = () => {
   }, []);
   return (
     <section className="pb-[60px] overflow-hidden">
-      <div className="px-4 md:px-8">
+      <div className="px-4 md:px-8 ">
         <div
           className="  absolute top-[-85px] left-0 w-[300px] md:w-[400px] lg:w-[500px] xl:w-[800px] 2xl:w-[1100px] h-[500px] 2xl:h-[700px] z-[-1]"
           style={{
@@ -28,7 +28,13 @@ const PricingPage = () => {
           <p className="   block py-[6px] px-3 text-[15px] text-pricingText bg-input rounded-[100px] border border-pricingBorder">
             Bring your business to the best scale
           </p>
-          <h2 className=" text-[32px] text-center font-medium md:text-[64px] ">
+          <h2
+            className=" text-[32px] text-center font-medium md:text-[64px]  bg-clip-text text-transparent "
+            style={{
+              backgroundImage:
+                'linear-gradient(to bottom, #FFFFFF 35%, #AEBDFF)',
+            }}
+          >
             Discover Products <br /> With the Best Pricing
           </h2>
           <p className="text-center text-[16px]  text-pricingText lg:w-[821px]">
@@ -38,8 +44,8 @@ const PricingPage = () => {
             start achieving more today!
           </p>
         </div>
-        <div className=" overflow-hidden scrollbar-none mt-4">
-          <ul className="flex overflow-x-scroll overflow-auto scroll-smooth scroll-snap-x mandatory   gap-6 xl:justify-center scrollbar-none">
+        <div className=" overflow-hidden scrollbar-none mt-4 lg:mt-8 flex justify-center">
+          <ul className="flex overflow-x-scroll overflow-auto scroll-smooth scroll-snap-x mandatory    gap-6 scrollbar-none">
             <MonthlyPlan />
             <QuarterlyPlan />
             <AnnualPlan />

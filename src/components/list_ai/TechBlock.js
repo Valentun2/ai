@@ -3,6 +3,7 @@ import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import ScrollToHash from 'helpers/Scroll';
+import { openModal } from './AnalyticsBlock';
 
 const TechBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -24,6 +25,7 @@ const TechBlock = ({ arr }) => {
       view,
     });
     setVisible(true);
+    openModal();
   };
 
   return (
@@ -38,8 +40,11 @@ const TechBlock = ({ arr }) => {
           img={'./image/CodeDebugger.png'}
           tag={'Tech'}
         >
-          Quickly find and fix bugs with AI-powered code analysis. Code Debugger
-          highlights errors and suggests fixes, so you can code with confidence.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Quickly find and fix bugs with AI-powered code analysis. Code
+            Debugger highlights errors and suggests fixes, so you can code with
+            confidence.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -48,8 +53,10 @@ const TechBlock = ({ arr }) => {
           img={'./image/APIIntegrator.png'}
           tag={'Tech'}
         >
-          Simplify API integration with guided AI support. API Integrator helps
-          you connect services smoothly and troubleshoot common issues.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Simplify API integration with guided AI support. API Integrator
+            helps you connect services smoothly and troubleshoot common issues.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -58,8 +65,10 @@ const TechBlock = ({ arr }) => {
           img={'./image/CodeOptimizer.png'}
           tag={'Tech'}
         >
-          Enhance performance by refining your code. Code Optimizer suggests
-          improvements, reducing load times and boosting efficiency.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Enhance performance by refining your code. Code Optimizer suggests
+            improvements, reducing load times and boosting efficiency.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -68,8 +77,10 @@ const TechBlock = ({ arr }) => {
           img={'./image/DataCleaner.png'}
           tag={'Tech'}
         >
-          Prepare data for analysis in minutes. Data Cleaner removes duplicates,
-          fills gaps, and structures data to ensure accuracy.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Prepare data for analysis in minutes. Data Cleaner removes
+            duplicates, fills gaps, and structures data to ensure accuracy.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -78,8 +89,11 @@ const TechBlock = ({ arr }) => {
           img={'./image/ScriptGenerator.png'}
           tag={'Tech'}
         >
-          Automate tasks with custom scripts. Script Generator provides tailored
-          code snippets for repetitive actions, saving time and effort.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Automate tasks with custom scripts. Script Generator provides
+            tailored code snippets for repetitive actions, saving time and
+            effort.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -88,8 +102,10 @@ const TechBlock = ({ arr }) => {
           img={'./image/DevOpsAssistant.png'}
           tag={'Tech'}
         >
-          Manage your CI/CD pipelines with ease. DevOps Assistant streamlines
-          deployment, monitoring, and automation.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Manage your CI/CD pipelines with ease. DevOps Assistant streamlines
+            deployment, monitoring, and automation.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -98,8 +114,10 @@ const TechBlock = ({ arr }) => {
           img={'./image/VersionControlHelper.png'}
           tag={'Tech'}
         >
-          Stay on top of code changes effortlessly. Version Control Helper
-          organizes commits, tracks updates, and ensures smooth collaboration.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Stay on top of code changes effortlessly. Version Control Helper
+            organizes commits, tracks updates, and ensures smooth collaboration.
+          </p>
         </Card>
         <Card
           arr={arr}
@@ -108,9 +126,11 @@ const TechBlock = ({ arr }) => {
           img={'./image/SystemHealthMonitor.png'}
           tag={'Tech'}
         >
-          Keep your systems running optimally. System Health Monitor tracks
-          metrics and alerts you to potential issues before they impact
-          performance.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Keep your systems running optimally. System Health Monitor tracks
+            metrics and alerts you to potential issues before they impact
+            performance.
+          </p>
         </Card>
       </ul>
       {visible && (

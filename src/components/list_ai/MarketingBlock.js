@@ -3,6 +3,7 @@ import Card from './AICard';
 import ModalAI from 'components/modals/ModalAI';
 import BuyPremiumModal from 'components/modals/BuyPremiumModal';
 import ScrollToHash from 'helpers/Scroll';
+import { openModal } from './AnalyticsBlock';
 
 const MarketingBlock = ({ arr }) => {
   const [openBuyPremium, setOpenBuyPremium] = useState(false);
@@ -24,6 +25,7 @@ const MarketingBlock = ({ arr }) => {
       view,
     });
     setVisible(true);
+    openModal();
   };
 
   return (
@@ -38,8 +40,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Create persuasive ad copy that drives engagement. This AI generates
-          catchy and effective text tailored to your audience
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Create persuasive ad copy that drives engagement. This AI generates
+            catchy and effective text tailored to your audience
+          </p>
         </Card>
         <Card
           title={'SEO Optimizer'}
@@ -48,8 +52,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Boost your search rankings with optimized content suggestions. SEO
-          Optimizer refines keywords and meta tags for better visibility.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Boost your search rankings with optimized content suggestions. SEO
+            Optimizer refines keywords and meta tags for better visibility.
+          </p>
         </Card>
         <Card
           title={'Social Media Scheduler'}
@@ -58,8 +64,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Plan and schedule posts across platforms effortlessly. Social Media
-          Scheduler helps maintain consistency and engagement.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Plan and schedule posts across platforms effortlessly. Social Media
+            Scheduler helps maintain consistency and engagement.
+          </p>
         </Card>
         <Card
           title={'Feedback Analyzer'}
@@ -68,8 +76,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Understand customer sentiments instantly. Feedback Analyzer scans
-          reviews and comments to reveal trends and areas for improvement.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Understand customer sentiments instantly. Feedback Analyzer scans
+            reviews and comments to reveal trends and areas for improvement.
+          </p>
         </Card>
         <Card
           title={'Audience Targeter'}
@@ -78,8 +88,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Identify and reach your ideal audience. Audience Targeter analyzes
-          demographics to help you focus your marketing efforts effectively
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Identify and reach your ideal audience. Audience Targeter analyzes
+            demographics to help you focus your marketing efforts effectively
+          </p>
         </Card>
         <Card
           title={'Performance Tracker'}
@@ -88,8 +100,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Monitor and evaluate campaign success in real-time. This AI tracks
-          metrics and highlights actionable insights for optimization.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Monitor and evaluate campaign success in real-time. This AI tracks
+            metrics and highlights actionable insights for optimization.
+          </p>
         </Card>
         <Card
           title={'Email Campaign Optimizer'}
@@ -98,8 +112,10 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Craft high-conversion emails effortlessly. Email Optimizer fine-tunes
-          subject lines and body content for maximum impact."
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Craft high-conversion emails effortlessly. Email Optimizer
+            fine-tunes subject lines and body content for maximum impact."
+          </p>
         </Card>
         <Card
           title={'Visual Content Creator'}
@@ -108,9 +124,11 @@ const MarketingBlock = ({ arr }) => {
           tag={'Marketing'}
           arr={arr}
         >
-          Enhance your branding with on-point visuals. Visual Content Creator
-          generates images, infographics, and layouts that resonate with your
-          audience.
+          <p className="text-[14px] text-cardsText mt-2 pointer-events-none ">
+            Enhance your branding with on-point visuals. Visual Content Creator
+            generates images, infographics, and layouts that resonate with your
+            audience.
+          </p>
         </Card>
       </ul>
       {visible && (

@@ -26,38 +26,32 @@ const Hero = ({ click, handleSearch, handleClickReset }) => {
         </p>
         <form
           onSubmit={e => handleSearch(e)}
-          className="w-full xl:w-[75%] 2xl:w-[55%] pt-6 flex gap-2  "
+          className="w-full xl:w-[75%] 2xl:w-[55%] pt-6 flex gap-2 relative "
         >
-          <div className="relative w-full  flex gap-2 md:items-center ">
-            <input
-              name="search"
-              className=" pl-3  w-[100%] h-[50px] border-[2px] focus:border-white focus:outline-none bg-transparent rounded-2xl  border-inputTransparent"
-            />
-            <button
-              type="button"
-              className="absolute top-3 right-0 "
-              onClick={e => handleClickReset(e)}
+          <div className="relative w-full  flex gap-2 items-center  ">
+            <svg
+              width={20}
+              height={20}
+              className="flex top-[15px] left-4 absolute  justify-center items-center w-5 h-5  rounded-[6px] pointer-events-none hover:fill-[#CECECE]"
             >
-              {' '}
-              <svg
-                width={24}
-                height={24}
-                className="flex p-2 justify-center items-center w-8 h-8  rounded-[6px] pointer-events-none"
-              >
-                <use
-                  width={14}
-                  height={14}
-                  href="./image/icons.svg#icon-close"
-                ></use>
-              </svg>
-            </button>
+              <use
+                width={20}
+                height={20}
+                href="./image/icons.svg#icon-prime_search"
+              ></use>
+            </svg>
+            <input
+              placeholder="Search AI"
+              name="search"
+              className=" pl-3 placeholder:pl-8  w-[100%] h-[50px] border-[2px] focus:border-white focus:outline-none bg-transparent rounded-2xl  border-inputTransparent"
+            />
           </div>
-          <button className="bg-white text-black rounded-xl py-3 px-4 font-medium">
+          <button className="bg-white text-black rounded-xl py-3 px-4 font-medium hover:bg-[#CECECE]">
             Search
           </button>
         </form>
         <ul
-          className="flex  flex-wrap pt-2 text-whiteTransparent text-[16px] gap-5 items-center"
+          className="flex  flex-wrap pt-2 text-whiteTransparent text-[16px] gap-2 lg:gap-5 items-center"
           onClick={e => {
             click(e);
           }}

@@ -2,7 +2,7 @@ import SupportForm from './SupportForm';
 
 const Support = () => {
   return (
-    <section className="py-[212px] relative overflow-hidden">
+    <section className="py-[16px] md:py-16 xl:py-[212px] relative overflow-hidden">
       <div
         className="  absolute top-0 xl:top-[-85px] left-0 w-[270px] md:w-[400px] lg:w-[500px] xl:w-[750px]  2xl:w-[950px] h-[500px]   2xl:h-[650px] z-[-1]"
         style={{
@@ -19,10 +19,10 @@ const Support = () => {
       ></div>
       <div className="container items-center md:flex  lg:justify-between flex-col xl:flex-row justify-center ">
         <div className="w-full xl:w-[456px] 2xl:w-[654px]">
-          <h2 className="text-[32px] md:text-[48px] lg:text-[64px] font-semibold text-center">
+          <h2 className="text-[32px] md:text-[48px] lg:text-[64px] font-semibold text-left">
             Get in Touch with Us
           </h2>
-          <p className="font-[16px] text-cardsText text-center md:w-[70%] lg:w-full mx-auto">
+          <p className="font-[16px] text-cardsText text-center md:w-[70%] lg:w-full mx-auto xl:text-left">
             Have a question, need support, or interested in partnering? Fill out
             the form below, and our team will reach out promptly. We're here to
             make sure you have all the answers and support you need!

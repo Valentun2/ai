@@ -88,7 +88,7 @@ const ChatPage = () => {
             ></use>
           </svg>
           <Link to="/" className="text-[17px] text-white  font-bold ">
-            getmyhelp.ai
+            worldtools.ai{' '}
           </Link>
         </div>
       </div>
@@ -109,7 +109,7 @@ const ChatPage = () => {
                 ></use>
               </svg>
               <Link to="/" className="text-[17px] font-bold">
-                getmyhelp.ai
+                worldtools.ai{' '}
               </Link>
             </div>
             <div className="hidden md:flex gap-1 items-center ">
@@ -220,7 +220,7 @@ const ChatPage = () => {
                 ></use>
               </svg>
               <Link to="/" className="text-[17px] font-bold text-white">
-                getmyhelp.ai
+                worldtools.ai{' '}
               </Link>
             </div>
             <div className="flex gap-1 items-center border-y-[2px] border-y-pricingBorder p-4 justify-between">
