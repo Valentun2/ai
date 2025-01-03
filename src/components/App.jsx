@@ -11,9 +11,6 @@ import Cookies from 'page/Cookies/CookiesPage';
 export const App = () => {
   return (
     <>
-      {/* <Header /> */}
-
-      {/* <MainPage></MainPage> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage />} />
